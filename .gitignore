@@ -17,7 +17,7 @@ sitemap.xml.gz
 #wordpress specific
 xmlrpc.php
 wp-*.php
-
+/index.php
 wp-includes/
 wp-admin/
 !wp-content/themes/
