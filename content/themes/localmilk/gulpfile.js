@@ -17,24 +17,68 @@
 
 // Load plugins
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     notify = require('gulp-notify'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    cssnano = require('gulp-cssnano'),
+    cache = require('gulp-cache'),
+    imagemin = require('gulp-imagemin'),
+    del = require('del'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename');
 
+var paths = {
+  styles: [
 
+    //'./node_modules/foundation-sites/scss/**/*',
+    './_static/styles/style.scss'
+  ],
+  scripts: [
+    './node_modules/foundation-sites/dist/foundation.min.js',
+    './node_modules/foundation-sites/dist/plugins/foundation.responsiveToggle.js',
+    './node_modules/foundation-sites/dist/plugins/foundation.util.mediaQuery.js',
+    './_static/js/main.js'
+    //'./node_modules/foundation-sites/dist/plugins/foundation.util.triggers.js',
+    //'./node_modules/foundation-sites/dist/plugins/foundation.util.motion.js'
+    //'./wp-content/themes/'+ theme + '/js/original/*.js'
+  ],
+  images: '../../uploads/**/*'
+
+};
 // Styles
 gulp.task('styles', function() {
-    return sass('_static/styles/style.scss', { style: 'compressed' })
+    return gulp.src(paths.styles)
+        .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer('last 2 version'))
+        .pipe(cssnano())
         .pipe(gulp.dest(''))
         .pipe(notify({ message: 'Styles task complete' }));
 });
+//Scripts
+gulp.task('scripts', function () {
+  return gulp.src(paths.scripts)
+    //.pipe(jshint())
+    //.pipe(jshint.reporter('default'))
+    //.pipe(concat('main.js'))
+    .pipe(gulp.dest('./_static/js/'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('./_static/js/'))
+    .pipe(notify({ message: 'Scripts task complete' }));
+});
 
+//Images
+gulp.task('uploads', function() {
+  return gulp.src(paths.images)
+    .pipe(cache(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('./../uploads/'))
+    .pipe(notify({ message: 'Images task complete' }));
+});
 
 // Default Task
 gulp.task('default', function() {
-    gulp.start('styles');
+    gulp.start('styles', 'scripts', 'uploads');
 });
 
 
