@@ -15,20 +15,9 @@ sitemap.xml.gz
 
 
 #wordpress specific
-xmlrpc.php
-wp-*.php
-/index.php
-wp-includes/
-wp-admin/
-!wp-content/themes/
-wp-content/uploads/
-wp-content/themes/twenty*/
-wp-content/plugins/
-wp-content/wflogs/
-wp-content/cache/
-wp-content/updraft/
-wp-content/upgrade/
-wp-content/w3tc-config/
+/wordpress
+/wp-config.php
+/local-config.php
 
 
 #vagrant configurations
