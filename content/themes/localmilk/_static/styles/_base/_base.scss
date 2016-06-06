@@ -1,0 +1,18 @@
+/****************************
+Base
+contains base element global styles,
+such as h1, h2, p, a, blockquote etc.
+****************************/
+
+::selection {
+    background: #888;
+    color: white;
+}
+::-moz-selection {
+    background: #888;
+    color: white;
+}
+
+body {
+    font-size: $font-size-base; // 16px, set in variables.scss
+}

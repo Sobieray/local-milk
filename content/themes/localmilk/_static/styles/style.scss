@@ -1,0 +1,36 @@
+/*!
+Theme Name: Theme Name
+Description: Custom theme for ...
+Author: Alchemy + Aim
+Author URI: http://www.alchemyandaim.com
+*/
+
+/**
+ * Main Style.scss
+ * output file that brings together all of the parts,
+ * then contains the most specific styles.
+ * The parts are imported in order of specificty.
+ */
+
+@import "_utils/variables"; // variables
+@import "_utils/mixins"; // mixins, extends etc.
+
+// @import "_vendor/vendor-custom"; // Custom 3rd-party vendor styles
+
+@import "_base/base"; // Base element styles; e.g. body, h1-6, p, a, button
+
+@import "_layout/components"; // For resuable, self-contained components
+@import "_layout/layout"; // styling for larger components/sections; e.g. nav, header, footer
+
+@import "_vendor/woocommerce"; // Style overrides for woocommerce elements
+// @import "_vendor/...";
+
+/****************************
+General Styles
+****************************/
+
+
+
+/****************************
+Media Queries
+****************************/
