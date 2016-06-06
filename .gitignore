@@ -18,6 +18,7 @@ sitemap.xml.gz
 /wordpress
 /wp-config.php
 /local-config.php
+/content/plugins/*
 
 
 #vagrant configurations
