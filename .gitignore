@@ -19,7 +19,7 @@ sitemap.xml.gz
 /wp-config.php
 /local-config.php
 /content/plugins/*
-
+/content/themes/twenty*
 
 #vagrant configurations
 /vagrant
