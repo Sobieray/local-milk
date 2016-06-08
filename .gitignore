@@ -20,6 +20,7 @@ sitemap.xml.gz
 /local-config.php
 /content/plugins/*
 /content/themes/twenty*
+/content/uploads/*
 
 #vagrant configurations
 /vagrant

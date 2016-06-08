@@ -4,7 +4,132 @@ contains styling for larger layout components;
 e.g. nav, header, footer, etc.
 ***************************************/
 
+body {
+	background-image: url(_static/images/background.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+/****************************
+Navigation
+****************************/
+nav#primary-nav {
+	background-image: url(_static/images/navbar-bg.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	span.pencil-border {
+		background-image: url(_static/images/pencil-border.png);
+		padding: 1px 0px;
+		width: 100%;
+		display: block;
+	}
+	#socialMedia {
+		display: inline-block;
+		float: left;
+		ul {
+			margin: 0;
+		}
+		li {
+			display: inline-block;
+			padding: 0px 10px;
+			img {
+				width: 13px;
+				padding: 20px 0px 0px;
+			}
+		}	
+	}
+}
+.top-bar {
+	background-image: url(_static/images/navbar-wc.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding: 0;
+	.top-bar-title {
+		position: relative;
+		padding: 11px 45px;
+		margin: 0;
+		img {
+			width: 75px;
+		}
+		span.pencil-vert-border {
+			position: absolute;
+			background-image: url(_static/images/pencil-vert-border.png);
+			padding: 31px 0px;
+			top: -10px;
+			width: 2px;
+			right: 0;
+		}
+	}
+	.top-bar-left {
+		li {
+			position: relative;
+			text-transform: uppercase; 
+			width: auto;
 
+			text-align: center;
+			&:after {
+				content: "|";
+				position: absolute;
+				right: 0;
+				top: 33%;
+				font-size: 12px;
+			}
+			&:last-child {
+				&:after {
+					display: none;
+				}
+			}
+			a {
+				color: $black;
+				letter-spacing: rem-calc(4);
+				font-size: rem-calc(12);
+				padding: 20px 2.47vw;
+			}
+		}
+	}
+	.top-bar-right {
+		position: relative;
+		span.pencil-vert-border {
+			position: absolute;
+			background-image: url(_static/images/pencil-vert-border.png);
+			padding: 31px 0px;
+			top: -10px;
+			width: 2px;
+			left: 0;
+		}
+		.search {
+			display: inline-block;
+			position: relative;
+			img {
+				padding: 23px 20px 21px;
+				margin: 0;
+				cursor: pointer;
+
+			}
+			form {
+				position: absolute;
+    			left: -165px;
+    			width: 215px;
+    			top: 53px;
+    			transition: left ease 0.2s;
+			}
+			input[type=text] {
+				width: 167px;
+				padding: 0px 5px;
+				margin: 0;
+				float: left;
+			}
+			input[type=image] {
+				padding: 15px 19px;
+				float: left;
+				border-bottom: 1px solid #cacaca;
+				margin: 0;
+			}
+			form.closed {
+				left: 300px;
+			}
+		}
+	}
+}
 /****************************
 Header
 ****************************/

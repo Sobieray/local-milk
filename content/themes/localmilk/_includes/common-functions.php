@@ -135,18 +135,18 @@ add_action('dashboard_glance_items', 'aa_custom_post_type_dashboard_glance');
  * Register widget area.
  *
  */
-// function aa_widgets_init() {
-// 	register_sidebar( array(
-// 		'name'          => esc_html__( 'Sidebar' ),
-// 		'id'            => 'sidebar-1',
-// 		'description'   => '',
-// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 		'after_widget'  => '</section>',
-// 		'before_title'  => '<h2 class="widget-title">',
-// 		'after_title'   => '</h2>',
-// 	) );
-// }
-// add_action( 'widgets_init', 'aa_widgets_init' );
+function aa_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Social Media' ),
+		'id'            => 'social-media',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'aa_widgets_init' );
 
 
 

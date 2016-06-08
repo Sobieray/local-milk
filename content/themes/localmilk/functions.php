@@ -17,6 +17,7 @@ include_once("_includes/custom-post-types.php");
  */
 include_once('_includes/enqueue-scripts.php');
 
+include_once('_includes/widgets.php');
 
 /**
  * Define some global variables

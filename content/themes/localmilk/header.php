@@ -24,9 +24,48 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	<?php wp_enqueue_script("jquery"); ?>
 	<?php wp_head(); ?>
 </head>
-
+<?php 
+	$images_dir = get_bloginfo('template_directory') . '/_static/images';
+?>
 <body <?php body_class('page-' . $post->post_name); ?>>
+	<nav id="primary-nav">
+		<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+		  <button class="menu-icon" type="button" data-toggle></button>
+		  <div class="title-bar-title">Menu</div>
+		</div>
+
+		<div class="top-bar" id="main-menu">
+		  <div class="top-bar-title">
+		  	<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo" width="140"></a>
+		  	<span class="pencil-vert-border"></span>
+		  </div>
+		  <div class="top-bar-left">
+		    <?php wp_nav_menu( array(
+	    		'theme_location' => 'primary'
+			));
+		    ?>
+		  </div>
+		   <div class="top-bar-right">
+		    <?php if ( is_active_sidebar( 'social-media' ) ) : ?>
+				<?php dynamic_sidebar( 'social-media' ); ?>
+			<?php endif; ?>
+			<span class="pencil-vert-border"></span>
+			<div class="search">
+				<form action="/" method="get" class="closed">
+				    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="search" />
+				    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" />
+				</form>
+				<img src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" alt="search icon">
+				<span class="pencil-vert-border"></span>
+			</div>
+		  </div>
+		</div>
+		<span class="pencil-border"></span>
+	</nav>
+
