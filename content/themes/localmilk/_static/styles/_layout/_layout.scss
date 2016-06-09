@@ -22,21 +22,6 @@ nav#primary-nav {
 		width: 100%;
 		display: block;
 	}
-	#socialMedia {
-		display: inline-block;
-		float: left;
-		ul {
-			margin: 0;
-		}
-		li {
-			display: inline-block;
-			padding: 0px 10px;
-			img {
-				width: 13px;
-				padding: 20px 0px 0px;
-			}
-		}	
-	}
 }
 .top-bar {
 	background-image: url(_static/images/navbar-wc.png);
@@ -130,12 +115,116 @@ nav#primary-nav {
 		}
 	}
 }
+nav#primary-nav {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
 /****************************
 Header
 ****************************/
 
+/****************************
+Blog
+****************************/
+.blog {
+	article {
+		.group {
+			border-bottom: 1px solid $black;
+		}
+		.entry-meta {
+			a {
+				color: $black;
+				text-transform: uppercase;
+				font-size: rem-calc(7.5);
+				font-family: $body-font-second;
+				letter-spacing: 1px;
+				margin-top: 20px;
+			}
+		}
+		.entry-title {
+			text-transform: uppercase;
+			font-size: rem-calc(13.13);
+			letter-spacing: rem-calc(1.5);
+			margin-top: 17px;
+			margin-bottom: 20px;
+			a {
+				color: $black;
+				padding-bottom: 5px;
+				border-bottom: 1px solid $black;
+			}
+		}
+		.entry-date {
+			font-size: rem-calc(9.38);
+			letter-spacing: 2px;
+			padding-left: 0;
+		}
+		.entry-content {
+			font-size: rem-calc(16.88);
+			padding-right: 0;
 
+		}
+		.read-more {
+			float: right;
+			margin-bottom: 53px;
+			a {
+				color: $black;
+				font-style: italic;
+				font-size: rem-calc(13.13);
+				letter-spacing: rem-calc(0.5);
+				&:after {
+					content: " ";
+					background-image: url(_static/images/icons/arrow.png);
+					background-size: contain;
+				    position: relative;
+				    width: 17px;
+				    height: 17px;
+				    display: inline-block;
+				    top: 6px;
+				    margin-left: 5px;
+				}
+			}
 
+		}
+	}
+}
 /****************************
 Footer
 ****************************/
+footer {
+	text-transform: uppercase;
+	font-size: rem-calc(9.38);
+	.social-contact {
+		position: relative;
+		padding-bottom: 13px;
+		border-bottom: 1px solid $black;
+		a.contact {
+			float: right;
+			position: absolute;
+			bottom: 13px;
+			right: 0;
+			color: $black;
+			text-decoration: underline;
+		}
+	}
+	.copyright, .creators {
+		display: inline-block;
+		margin-top: 13px;
+	}
+	.creators {
+		float: right;
+		font-family: $body-font-second;
+		font-size: rem-calc(7.5);
+		a {
+			color: $black;
+		}
+	}
+}

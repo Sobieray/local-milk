@@ -10,28 +10,22 @@
 get_header();
 ?>
 
-<div class="container">
+<div class="row">
+	<?php get_sidebar(); ?>
+	<div class="column small-12 medium-8">
+	    <?php
+		if ( have_posts() ) :
 
-    <?php
-	if ( have_posts() ) :
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-		if ( is_home() && ! is_front_page() ) : ?>
-			<header>
-				<h1><?php single_post_title(); ?></h1>
-			</header>
+	            get_template_part( '_template-parts/content', get_post_format() );
 
-		<?php
-		endif;
+	        endwhile;
 
-		/* Start the Loop */
-		while ( have_posts() ) : the_post();
+		endif; ?>
+	</div>
 
-            get_template_part( '_template-parts/content', get_post_format() );
-
-        endwhile;
-
-	endif; ?>
-
-</div> <!-- /.container -->
+</div> <!-- /.row -->
 
 <?php get_footer(); ?>

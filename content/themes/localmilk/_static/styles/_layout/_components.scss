@@ -75,5 +75,99 @@ contains each self-contained components
 			}
 		}
 	}
-}
+}//faux landing page
 
+/*******************
+Social Media
+********************/
+#socialMedia {
+	display: inline-block;
+	float: left;
+	ul {
+		margin: 0;
+	}
+	li {
+		display: inline-block;
+		padding: 0px 10px;
+		img {
+			width: 13px;
+			padding: 20px 0px 0px;
+		}
+	}	
+}
+/*******************
+Widgets
+********************/
+.widget-area {
+	.title {
+		font-size: rem-calc(11.25);
+		text-transform: uppercase;
+		border-bottom: 1px solid $black;
+		padding-bottom: 10px;
+		margin-bottom: 18px;
+		letter-spacing: 4px;
+	}
+	.bio {
+		font-size: rem-calc(16.88);
+		margin-top: 25px;
+		span {
+			font-size: rem-calc(13.94);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+	}
+	.subscribe-widget {
+		img {
+			width: 10px;
+			margin-left: 10px;
+		}
+		label {
+			float: left;
+		}
+		.subscription_email {
+			border: none;
+			border-bottom: 1px solid #333366;
+			box-shadow: none;
+			background: transparent;
+			width: 85%;
+    		margin-left: 42px;
+			height: 20px;
+			padding-left: 0;
+		}
+		.subscription_btn {
+			display: none;
+		}
+	}
+	ol.toc {
+	    max-width: 40em;
+	    overflow-x: hidden;
+	    list-style: none;
+	    padding: 0px;
+	    margin-left: 0;
+	    counter-reset: itemnr;
+		li:before {
+		    float: left;
+		    width: 0;
+		    white-space: nowrap;
+		    content: ". . . . . . . . . . . . . . . . . . . . "
+				 	 ". . . . . . . . . . . . . . . . . . . . "
+				 	 ". . . . . . . . . . . . . . . . . . . . "
+				 	 ". . . . . . . . . . . . . . . . . . . . ";
+		}
+		span.roman:before {
+			content: counter(itemnr, upper-roman) ".";
+			display: inline-block;
+			width: auto;
+			counter-increment: itemnr; 
+		}
+		span:first-child {
+	    	padding-right: 0.33em;
+	    	background: #f8f8f8;
+	    }
+		span + span {
+		    float: right;
+		    padding-left: 0.33em;
+		    background: #f8f8f8;
+		}
+	}
+}
