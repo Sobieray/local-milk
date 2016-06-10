@@ -9,4 +9,4 @@ define('WP_DEBUG', true);
 define( 'FORCE_SSL_ADMIN', false );
 define( 'SAVEQUERIES', false );
 define( 'JETPACK_DEV_DEBUG', true );
-define( 'UPLOADS', '../content/uploads' );
+define( 'UPLOADS', 'media' );
