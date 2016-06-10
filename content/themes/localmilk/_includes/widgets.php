@@ -5,6 +5,7 @@ add_action( 'widgets_init', function(){
      register_widget( 'Biography' );
      register_widget( 'Subscribe' );
      register_widget( 'Instagram_Widget' );
+     register_widget( 'TOC' );
 });
 
 /****************************************
@@ -355,4 +356,81 @@ class Instagram_Widget extends WP_Widget {
 		return $instance;
 	}
 } // class Instagram_Widget
+/****************************************
+	Adds Table of Contents
+*****************************************/
+/* This widget is levergaing the Instagram Feed Plugin */
+
+class TOC extends WP_Widget {
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'Table of Contents', // Base ID
+			__('Table of Contents', 'text_domain'), // Name
+			array('description' => __( 'Dispalys a table of contents with categories choosen in the theme&rsquo;s options', 'text_domain' ),) // Args
+		);
+	}
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		
+		
+		$terms = get_field('list_of_categories', 'option');
+
+
+		if( $terms ): ?>
+			<nav id="table-contents">
+				<p class="title">Table of contents</p>
+				<ol class=toc>
+
+				<?php foreach( $terms as $term ): ?>
+
+					<li><span class="roman"></span><span><a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?></a></span></li>
+
+
+				<?php endforeach; ?>
+
+				</ol>
+			</nav>
+
+		<?php endif;
+	}
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+
+
+	}
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+
+		$instance = $old_instance;
+
+		
+
+		return $instance;
+	}
+} // class TOC
 ?>

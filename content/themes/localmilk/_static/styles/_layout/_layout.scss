@@ -14,15 +14,19 @@ Navigation
 ****************************/
 nav#primary-nav {
 	background-image: url(_static/images/navbar-bg.png);
+	background-color: #f9f9f9;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: left bottom;
+	position: fixed;
+	width: 100%;
 	span.pencil-border {
 		background-image: url(_static/images/pencil-border.png);
 		padding: 1px 0px;
 		width: 100%;
 		display: block;
 	}
-}
+}//nav#primary-nav
 .top-bar {
 	background-image: url(_static/images/navbar-wc.png);
 	background-repeat: no-repeat;
@@ -70,7 +74,7 @@ nav#primary-nav {
 				padding: 20px 2.47vw;
 			}
 		}
-	}
+	}//.top-bar-left
 	.top-bar-right {
 		position: relative;
 		span.pencil-vert-border {
@@ -91,11 +95,11 @@ nav#primary-nav {
 
 			}
 			form {
-				position: absolute;
-    			left: -165px;
+				position: fixed;
+    			right: -1px;
     			width: 215px;
-    			top: 53px;
-    			transition: left ease 0.2s;
+    			top: 85px;
+    			transition: right ease 0.2s;
 			}
 			input[type=text] {
 				width: 167px;
@@ -110,11 +114,12 @@ nav#primary-nav {
 				margin: 0;
 			}
 			form.closed {
-				left: 300px;
+				left: 100%;
+				right: -100%;
 			}
 		}
-	}
-}
+	}//.top-bar-right
+}//.top-bar
 nav#primary-nav {
   @include breakpoint(small only) {
     .top-bar {
@@ -127,15 +132,17 @@ nav#primary-nav {
       display: none;
     }
   }
-}
+}//nav#primary-nav
 /****************************
 Header
 ****************************/
 
+
+
 /****************************
 Blog
 ****************************/
-.blog {
+.blog, .single {
 	article {
 		.group {
 			border-bottom: 1px solid $black;
@@ -144,7 +151,7 @@ Blog
 			a {
 				color: $black;
 				text-transform: uppercase;
-				font-size: rem-calc(7.5);
+				font-size: rem-calc(8);
 				font-family: $body-font-second;
 				letter-spacing: 1px;
 				margin-top: 20px;
@@ -152,23 +159,23 @@ Blog
 		}
 		.entry-title {
 			text-transform: uppercase;
-			font-size: rem-calc(13.13);
+			font-size: rem-calc(13);
 			letter-spacing: rem-calc(1.5);
 			margin-top: 17px;
 			margin-bottom: 20px;
+			border-bottom: 1px solid $black;
+			padding-bottom: 5px;
 			a {
 				color: $black;
-				padding-bottom: 5px;
-				border-bottom: 1px solid $black;
 			}
 		}
 		.entry-date {
-			font-size: rem-calc(9.38);
+			font-size: rem-calc(10);
 			letter-spacing: 2px;
 			padding-left: 0;
 		}
 		.entry-content {
-			font-size: rem-calc(16.88);
+			font-size: rem-calc(17);
 			padding-right: 0;
 
 		}
@@ -178,7 +185,7 @@ Blog
 			a {
 				color: $black;
 				font-style: italic;
-				font-size: rem-calc(13.13);
+				font-size: rem-calc(13);
 				letter-spacing: rem-calc(0.5);
 				&:after {
 					content: " ";
@@ -195,7 +202,71 @@ Blog
 
 		}
 	}
-}
+}// .blog .single
+/****************************
+Faux Landing Page
+****************************/
+.page-template-faux-landing-page {
+	.full-width {
+		height: 100vh;
+		width: 100vw;
+	}
+	.satsuki-bg {
+		background-image: url(_static/images/satsuki.png);
+		background-repeat: no-repeat;
+		background-position: right 75%;
+		text-align: center;
+		max-width: 1350px;
+		margin: 0 auto;
+		height: 100%;
+		img {
+			margin-top: 33vh;
+			margin-bottom: 55px;
+			max-width: 140px;
+		}
+		h1 {
+			font-size: rem-calc(11.25);
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			margin-bottom: 18px;
+		}
+		ol {
+			margin: 0;
+			li {
+				font-size: rem-calc(13.13);
+				font-style: italic;
+				margin-bottom: 55px;
+				display: inline-block;
+				padding:0 24px 0px 10px;
+				position: relative;
+				&:after {
+					content: " –- ";
+					position: absolute;
+					top: 2%;
+					right: 0;
+				}
+				&:last-child {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+		ul {
+			margin: 0;
+			li {
+				display: inline-block;
+				a {
+					font-size: rem-calc(16);
+					font-style: italic;
+					color: $black;
+					padding: 20px;
+				}
+
+			}
+		}
+	}
+}//.page-template-faux-landing-page
 /****************************
 Footer
 ****************************/
@@ -227,4 +298,4 @@ footer {
 			color: $black;
 		}
 	}
-}
+}//footer

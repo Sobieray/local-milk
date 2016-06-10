@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<div class="row">
+<div class="row cushion">
 
     <?php
     while ( have_posts() ) : the_post();
