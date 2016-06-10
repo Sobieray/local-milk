@@ -144,6 +144,12 @@ Blog
 ****************************/
 .blog, .single {
 	article {
+		.entry-header {
+			img {
+				max-height: 425px;
+				object-fit: cover;
+			}
+		}
 		.group {
 			border-bottom: 1px solid $black;
 		}
