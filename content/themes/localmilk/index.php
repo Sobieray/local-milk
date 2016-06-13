@@ -24,7 +24,9 @@ get_header();
 	        endwhile;
 
 		endif; ?>
+        <div class="post-navigation"><p><?php posts_nav_link(' ','Newer Posts','Older Posts'); ?></p></div>
 	</div>
+    
 
 </div> <!-- /.row -->
 <div id="popular-posts" class="row">

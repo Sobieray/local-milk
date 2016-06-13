@@ -5,7 +5,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('group'); ?>>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -58,6 +58,10 @@
 	<?php if ( ! is_single() ) : ?>
 		<div class="read-more">
 			<a href="<?php echo esc_url( get_permalink() ); ?>">read more</a>
+		</div>
+	<?php else : ?>
+		<div class="post-content">
+			<?php the_field('post_content'); ?>
 		</div>
 	<?php endif; ?>
 	<footer class="entry-footer">

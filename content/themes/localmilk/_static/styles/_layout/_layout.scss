@@ -148,6 +148,7 @@ Blog
 			img {
 				max-height: 425px;
 				object-fit: cover;
+				width: 100%;
 			}
 		}
 		.group {
@@ -208,7 +209,57 @@ Blog
 
 		}
 	}
+	.post-navigation {
+		margin-top: 78px;
+		border-top: 1px solid $black;
+		a {
+			color: $black;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-size: rem-calc(9.38);
+			&:before {
+				content: " ";
+				background-image: url(_static/images/icons/ArrowL.png);
+				background-size: contain;
+			    position: relative;
+			    width: 17px;
+			    height: 17px;
+			    display: inline-block;
+			    top: 6px;
+			    margin-right: 5px;
+			}
+		}
+	}
+	.tags {
+		font-size: rem-calc(9.38);
+		font-style: italic;
+		margin-top: 10px;
+		a {
+			font-size: rem-calc(8);
+			color: $black;
+			font-family: $body-font-second;
+			text-transform: uppercase;
+			font-style: normal;
+			letter-spacing: 2px;
+			margin-left: 5px;
+
+		}
+	}
 }// .blog .single
+.single {
+	article {
+		border-bottom: 1px solid $black;
+		.group {
+			border-bottom: none;
+		}
+		img {
+			width: 100%;
+			margin-top: 13px;
+		}
+
+	}
+	
+}
 /****************************
 Faux Landing Page
 ****************************/
