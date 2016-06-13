@@ -324,6 +324,71 @@ Faux Landing Page
 		}
 	}
 }//.page-template-faux-landing-page
+
+/****************************
+Sub Category Template
+****************************/
+.page-template-sub-category-template {
+	.entry-header {
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding: 90px;
+		text-align: center;
+		margin-bottom: 50px;
+		.title-search {
+			position: relative;
+			h1 {
+				@include center(both);
+				font-size: rem-calc(13.13);
+				color: $white;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				&:after {
+					content: '';
+					border-bottom: 1px solid $white;
+					width: 100%;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 5px;
+
+				}
+			}
+		}
+
+	}
+	form {
+		position: relative;
+		max-width: 288px;
+		margin: 0 auto;
+		margin-top: 110px;
+		input[type=image] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 30px;
+		}
+	}
+	figure {
+		margin: 0;
+		position: relative;
+		margin-bottom: 20px;
+		img {
+			width: 100%;
+			height: 198px;
+			object-fit: cover;
+		}
+		figcaption {
+			@include center(both);
+			color: $white;
+			text-transform: uppercase;
+			font-size: rem-calc(13.13);
+			letter-spacing: 2px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
 /****************************
 Footer
 ****************************/

@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<div class="container">
+<div class="row">
 
 	<?php
 	if ( have_posts() ) : ?>
