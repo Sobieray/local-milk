@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php.
+ * Template part for displaying sub-categories in sub-category-template.php.
  *
  */
 ?>
@@ -23,17 +23,6 @@
 		 global $post;
 		 $slug = get_post( $post )->post_name;
 		 $this_category = get_category_by_slug($slug);
-
-		 /*$this_category = wp_list_categories(array(
-		 	'title_li' => '',
-		 	'orderby' => 'name',
-		 	'depth' => 5,
-		 	'show_count' => 0,
-		 	'parent'=> $this_category->cat_ID,
-		 	'echo' => 0 
-		 	));*/
-		 //echo '<ul>'. $this_category . '</ul>';
-
 		 $categories = get_categories( array(
 		     'parent'  => $this_category->cat_ID,
 		 ) );
@@ -51,12 +40,6 @@
 			 	$url = get_category_link( $category->term_id );
 			 	echo '<div class="column small-12 medium-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
 			 }
-
-
-		     /*printf( '<a href="%1$s">%2$s</a><br />',
-		         esc_url( get_category_link( $category->term_id ) ),
-		         esc_html( $category->name )
-		     );*/
 		 }
 		 ?>
 	</div>

@@ -6,33 +6,17 @@
 get_header();
 ?>
 
-<div class="row">
-
-	<?php
-	if ( have_posts() ) : ?>
-
+<div class="row cushion">
+	
 		<header class="page-header">
 			<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
-			?>
+				echo single_cat_title( '', false );
+				wp_list_categories(); ?>
 		</header><!-- .page-header -->
 
 		<?php
-		/* Start the Loop */
-		while ( have_posts() ) : the_post();
-
-			get_template_part( '_template-parts/content', get_post_format() );
-
-		endwhile;
-
-		the_posts_navigation();
-
-	else :
-
-		get_template_part( '_template-parts/content', 'none' );
-
-	endif; ?>
+			get_template_part( '_template-parts/content', 'archives' );
+		?>
 
 </div><!-- .content-area -->
 
