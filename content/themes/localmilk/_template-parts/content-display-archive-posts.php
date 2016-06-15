@@ -10,6 +10,6 @@
 		if ( has_post_thumbnail() ) {
 		    the_post_thumbnail();
 		} 
-		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 	?>
 </article>

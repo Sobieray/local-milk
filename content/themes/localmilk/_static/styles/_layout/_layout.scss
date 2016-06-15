@@ -6,7 +6,6 @@ e.g. nav, header, footer, etc.
 
 body {
 	background-image: url(_static/images/background.png);
-	background-size: cover;
 	background-repeat: no-repeat;
 }
 /****************************
@@ -20,6 +19,7 @@ nav#primary-nav {
 	background-position: left bottom;
 	position: fixed;
 	width: 100%;
+	z-index: 99;
 	span.pencil-border {
 		background-image: url(_static/images/pencil-border.png);
 		padding: 1px 0px;
@@ -260,6 +260,11 @@ Blog
 	}
 	
 }
+.blog {
+	.cushion {
+		padding-top: 115px;
+	}
+}
 /****************************
 Faux Landing Page
 ****************************/
@@ -328,7 +333,7 @@ Faux Landing Page
 /****************************
 Sub Category Template
 ****************************/
-.page-template-sub-category-template {
+.page-template-sub-category-template, .category {
 	.entry-header {
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -386,6 +391,61 @@ Sub Category Template
 			letter-spacing: 2px;
 			width: 100%;
 			text-align: center;
+		}
+	}
+	.medium-4 {
+		p {
+			border-top: 1px solid $black;
+			padding-top: 10px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-size: rem-calc(9.38);
+		}
+	}
+	.cat-list {
+		a.sub-categories {
+			color: $black;
+			font-size: rem-calc(16.88);
+			text-transform: lowercase;
+			border-bottom: 1px solid $black;
+			display: block;
+			margin-bottom: 22px;
+		}
+	}
+	a.scroll-to {
+		float: right;
+		display: block;
+		color: $black;
+		font-style: italic;
+		font-size: rem-calc(13.13);
+		position: relative;
+		.dashicons {
+			font-size: 10px;
+		    position: absolute;
+		    left: -20px;
+		    bottom: 0;
+		    height: 15px;
+		}
+	}
+}
+.category {
+	.cushion {
+		padding-top: 115px;
+	}
+	article {
+		img {
+			max-height: 132px;
+			object-fit: cover;
+		}
+	}
+	.entry-title {
+		text-transform: uppercase;
+		font-size: rem-calc(8);
+		letter-spacing: rem-calc(1.5);
+		margin-top: 17px;
+		margin-bottom: 20px;
+		a {
+			color: $black;
 		}
 	}
 }
