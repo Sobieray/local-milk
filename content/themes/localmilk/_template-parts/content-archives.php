@@ -16,7 +16,7 @@
 	echo '<div class="small-12 medium-4 column"><p>'. $slug .'</p></div>';
 	echo '<div class="small-12 medium-8 column">';
 		// Get the last 10 posts in the special_cat category.
-		query_posts( 'category_name='.$slug.'&posts_per_page=18' );
+		query_posts( 'category_name='. $slug .'&posts_per_page=18' );
 
 		while ( have_posts() ) : the_post(); {
 			get_template_part( '_template-parts/content', 'display-archive-posts');
@@ -25,4 +25,9 @@
 		
 	?>
 	</div>
+	<?php 
+	    if (is_category('wander-guides')) {
+	    	echo  '<p>test</p>';
+	    }
+	?>
 </div>

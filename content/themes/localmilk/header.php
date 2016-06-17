@@ -47,7 +47,12 @@
 		  </div>
 		  <div class="top-bar-left">
 		    <?php wp_nav_menu( array(
-	    		'theme_location' => 'primary'
+		    	'container' => false,
+		    	'menu' => __( 'Top Bar Menu', 'textdomain' ),
+		    	'menu_class' => 'dropdown menu',
+	    		'theme_location' => 'topbar-menu',
+	    		'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+	    		'walker' => new F6_TOPBAR_MENU_WALKER()
 			));
 		    ?>
 		  </div>

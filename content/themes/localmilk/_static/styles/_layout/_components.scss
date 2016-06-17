@@ -2,7 +2,15 @@
 Components
 contains each self-contained components
 ****************************/
-
+a {
+	color: $black;
+	&:hover {
+		color: $light-gray;
+		img {
+			opacity: 0.5;
+		}
+	}
+}
 /* group clearfix */
 .group:before,
 .group:after {
@@ -88,17 +96,23 @@ Widgets
 	    padding: 0px;
 	    margin-left: 0;
 	    counter-reset: itemnr;
+	    a {
+	    	text-transform: uppercase;
+	    	letter-spacing: rem-calc(2);
+	    	font-size: rem-calc(11.25);
+	    	&:hover {
+	    		li:before {
+	    			color: $light-gray;
+	    		}
+	    	}
+		}
 	    li {
 	    	padding-bottom: 27px;
-	    	a {
-		    	color: $black;
-		    	text-transform: uppercase;
-		    	letter-spacing: rem-calc(2);
-		    	font-size: rem-calc(11.25);
-		    }
+	    	
 	    }
 		li:before {
 		    float: left;
+		    color: $black;
 		    width: 0;
 		    white-space: nowrap;
 		    content: ". . . . . . . . . . . . . . . . . . . . "
@@ -121,6 +135,11 @@ Widgets
 		    float: right;
 		    padding-left: 0.33em;
 		    background: #f8f8f8;
+		}
+		a:hover {
+			li span.roman {
+				color: $light-gray;
+			}
 		}
 	}
 }//.widget-area

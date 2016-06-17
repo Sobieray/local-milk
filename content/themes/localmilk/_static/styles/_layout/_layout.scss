@@ -26,6 +26,9 @@ nav#primary-nav {
 		width: 100%;
 		display: block;
 	}
+	.dropdown.menu>li.is-dropdown-submenu-parent>a:after {
+		display: none;
+	}
 }//nav#primary-nav
 .top-bar {
 	background-image: url(_static/images/navbar-wc.png);
@@ -68,7 +71,6 @@ nav#primary-nav {
 				}
 			}
 			a {
-				color: $black;
 				letter-spacing: rem-calc(4);
 				font-size: rem-calc(12);
 				padding: 20px 2.47vw;
@@ -119,6 +121,41 @@ nav#primary-nav {
 			}
 		}
 	}//.top-bar-right
+	.vertical.menu {
+		li {
+			border-bottom: 1px solid $light-gray;
+			margin: 0px 20px;
+			&:after {
+				display: none;
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}	
+	.dropdown.menu>li.opens-right>.is-dropdown-submenu {
+		left: -20%;
+		top: 103%;
+		transition: height ease 0.2s;
+		height: 0;
+		overflow: hidden;
+		&.js-dropdown-active {
+			height: 319px;;
+			border: 1px solid transparent;
+			border-image: url(_static/images/dropdown-border.png) 1 repeat;
+		}
+	}
+	.is-dropdown-submenu {
+		 background-color: $white;
+		 transition: all ease 0.2s;
+		 display: block;
+		 border: none;
+		 li a {
+		 	width: 220px;
+		 	padding: 20px 0px;
+		 }
+	}
+	
 }//.top-bar
 nav#primary-nav {
   @include breakpoint(small only) {
@@ -156,7 +193,6 @@ Blog
 		}
 		.entry-meta {
 			a {
-				color: $black;
 				text-transform: uppercase;
 				font-size: rem-calc(8);
 				font-family: $body-font-second;
@@ -170,10 +206,12 @@ Blog
 			letter-spacing: rem-calc(1.5);
 			margin-top: 17px;
 			margin-bottom: 20px;
-			border-bottom: 1px solid $black;
-			padding-bottom: 5px;
 			a {
-				color: $black;
+				border-bottom: 1px solid $black;
+				padding-bottom: 5px;
+				&:hover {
+					border-bottom: 1px solid #c8c8c8;
+				}
 			}
 		}
 		.entry-date {
@@ -190,7 +228,6 @@ Blog
 			float: right;
 			margin-bottom: 53px;
 			a {
-				color: $black;
 				font-style: italic;
 				font-size: rem-calc(13);
 				letter-spacing: rem-calc(0.5);
@@ -213,7 +250,6 @@ Blog
 		margin-top: 78px;
 		border-top: 1px solid $black;
 		a {
-			color: $black;
 			text-transform: uppercase;
 			letter-spacing: 2px;
 			font-size: rem-calc(9.38);
@@ -236,7 +272,6 @@ Blog
 		margin-top: 10px;
 		a {
 			font-size: rem-calc(8);
-			color: $black;
 			font-family: $body-font-second;
 			text-transform: uppercase;
 			font-style: normal;
@@ -321,7 +356,6 @@ Faux Landing Page
 				a {
 					font-size: rem-calc(16);
 					font-style: italic;
-					color: $black;
 					padding: 20px;
 				}
 
@@ -403,8 +437,8 @@ Sub Category Template
 		}
 	}
 	.cat-list {
+		padding: 0px 15px;
 		a.sub-categories {
-			color: $black;
 			font-size: rem-calc(16.88);
 			text-transform: lowercase;
 			border-bottom: 1px solid $black;
@@ -415,10 +449,10 @@ Sub Category Template
 	a.scroll-to {
 		float: right;
 		display: block;
-		color: $black;
 		font-style: italic;
 		font-size: rem-calc(13.13);
 		position: relative;
+		padding-right: 35px;
 		.dashicons {
 			font-size: 10px;
 		    position: absolute;
@@ -444,9 +478,6 @@ Sub Category Template
 		letter-spacing: rem-calc(1.5);
 		margin-top: 17px;
 		margin-bottom: 20px;
-		a {
-			color: $black;
-		}
 	}
 }
 /****************************
@@ -464,7 +495,6 @@ footer {
 			position: absolute;
 			bottom: 13px;
 			right: 0;
-			color: $black;
 			text-decoration: underline;
 		}
 	}
@@ -476,8 +506,5 @@ footer {
 		float: right;
 		font-family: $body-font-second;
 		font-size: rem-calc(7.5);
-		a {
-			color: $black;
-		}
 	}
 }//footer
