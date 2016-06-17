@@ -25,9 +25,4 @@
 		
 	?>
 	</div>
-	<?php 
-	    if (is_category('wander-guides')) {
-	    	echo  '<p>test</p>';
-	    }
-	?>
 </div>

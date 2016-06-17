@@ -132,10 +132,29 @@ nav#primary-nav {
 				border-bottom: none;
 			}
 		}
-	}	
+	}
+	.is-dropdown-submenu-parent:before {
+		content: '';
+	    height: 10px;
+	    width: 30px;
+	    background-image: url(_static/images/dropdown-arrow.png);
+	    background-repeat: no-repeat;
+	    background-size: contain;
+	    display: block;
+	    margin: 0 auto;
+	    position: absolute;
+	    bottom: -10px;
+	    z-index: -1;
+	    left: 50%;
+	    opacity: 0;
+	}
+	.is-dropdown-submenu-parent.is-active:before {
+		opacity: 1;
+		z-index: 99;
+	}
 	.dropdown.menu>li.opens-right>.is-dropdown-submenu {
 		left: -20%;
-		top: 103%;
+		top: 102%;
 		transition: height ease 0.2s;
 		height: 0;
 		overflow: hidden;
@@ -460,6 +479,10 @@ Sub Category Template
 		    bottom: 0;
 		    height: 15px;
 		}
+	}
+	.screen-height {
+		margin-top: 16%;
+		margin-bottom: 16%;
 	}
 }
 .category {

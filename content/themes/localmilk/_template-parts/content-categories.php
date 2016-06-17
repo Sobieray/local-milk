@@ -19,7 +19,7 @@
 
 	</header><!-- .entry-header -->
 	<div class="row">
-		<div class="group">
+		<div class="group screen-height">
 		<?php 
 		    global $post;
 		    $slug = get_post( $post )->post_name;
@@ -28,80 +28,80 @@
 		    	'parent'  => $this_category->cat_ID,
 		    ) );
 		    $result = count($categories);
-		    foreach ( $categories as $category ) {
-			 	if ($result > 5) {
-				 	$image = get_field($category->slug, 'option');
+		    if (is_page('recipes')) {
+			    foreach ( $categories as $category ) {
+				 	if ($result > 5) {
+					 	$image = get_field($category->slug, 'option');
 
-				 	$url = get_category_link( $category->term_id );
-				 	echo '<div class="column small-12 medium-4"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
-				 }else {
-				 	$image = get_field($category->slug, 'option');
+					 	$url = get_category_link( $category->term_id );
+					 	echo '<div class="column small-12 medium-4"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 }else {
+					 	$image = get_field($category->slug, 'option');
 
-				 	$url = get_category_link( $category->term_id );
-				 	echo '<div class="column small-12 medium-6"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
-				 }
-		  	}
+					 	$url = get_category_link( $category->term_id );
+					 	echo '<div class="column small-12 medium-6"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 }
+			  	}
+			} else {
+			    foreach ( $categories as $category ) {
+				 	if ($result > 5) {
+					 	$image = get_field($category->slug, 'option');
+
+					 	$url = get_category_link( $category->term_id );
+					 	echo '<div class="column small-12 medium-4"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 }else {
+					 	$image = get_field($category->slug, 'option');
+
+					 	$url = get_category_link( $category->term_id );
+					 	echo '<div class="column small-12 medium-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 }
+			  	}
+			}
 		 ?>
 		</div>
-		<div class="cushion">
-		<?php 
-	 		$children = get_categories(array( 
-		     	'parent' => $this_category->cat_ID,
-		     	'orderby' => 'id'
-		  	));
-		 	foreach ( $children as $child ) {
-		 		$this_category = get_category_by_slug($child->name);
-		 		$grandchildren = get_categories(array( 
-		 			'parent' => $this_category->cat_ID,
-		 			'orderby' => 'id'
-		 		));
+		<?php if (is_page('recipes')) : ?>
+			<div class="cushion">
+			<?php 
+		 		$children = get_categories(array( 
+			     	'parent' => $this_category->cat_ID,
+			     	'orderby' => 'id'
+			  	));
+			 	foreach ( $children as $child ) {
+			 		$this_category = get_category_by_slug($child->name);
+			 		$grandchildren = get_categories(array( 
+			 			'parent' => $this_category->cat_ID,
+			 			'orderby' => 'id'
+			 		));
 
-		 		$result = count($grandchildren);
+			 		$result = count($grandchildren);
 
-		 		//Loop Thought Wander Guide Categories and Display Posts
-		 		/*if ($child->slug == 'wander-guides') {
-		 			foreach ( $grandchildren as $grandchild ) {
-	 					echo '<section id="'. $grandchild->slug .'" class="cushion group"><div class="column small-12 medium-4"><p>'. $grandchild->name .'</p></div>';
-	 					echo '<div class="column small-12 medium-8">';
-	 					query_posts( 'category_name='. $grandchild->slug .'&posts_per_page=18' );
+			 		// loop through Parent categories and display children and grandchildern
+			     	echo '<section id="'. $child->slug .'" class="cushion group"><div class="column small-12 medium-4"><p>'. $child->name .'</p></div>
+			     	<div class="column small-12 medium-8">';
+			     	foreach ( $grandchildren as $grandchild ) {
 
-	 					while ( have_posts() ) : the_post(); {
-	 						get_template_part( '_template-parts/content', 'display-archive-posts');
-	 					}
-	 					endwhile;
-	 					
+			     		$url = get_category_link( $grandchild->term_id );
+			     		$image = get_field($grandchild->slug, 'option');
 
-	 					echo '</div>';
-	 				}
-
-		 		}*/
-
-		 		// loop through Parent categories and display children and grandchildern
-		     	echo '<section id="'. $child->slug .'" class="cushion group"><div class="column small-12 medium-4"><p>'. $child->name .'</p></div>
-		     	<div class="column small-12 medium-8">';
-		     	foreach ( $grandchildren as $grandchild ) {
-
-		     		$url = get_category_link( $grandchild->term_id );
-		     		$image = get_field($grandchild->slug, 'option');
-		     		
-		     		//one column list if categoreis are less than 6
-		     		if ($result < 6) { 
-		     			if ($image == true) {
-		     				echo '<div class="column small-12 medium-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt="'. $image['alt'] .'"><figcaption>'. $grandchild->name .'</figcaption></figure></a></div>';
-		     			}else {
-		     				echo '<div class="small-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
-		     			}
-		     			 
-		     		}else {
-		     			
-		     				echo '<div class="column small-12 medium-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
-		     		}
-		     	}
-		     	echo '</div><a class="scroll-to" href="#top"><span class="dashicons dashicons-arrow-up-alt"></span>back to top</a></section>';
-		 	} 
-		?>
-		</div>
-	</div>
+			     		//one column list if categoreis are less than 6
+			     		if ($result < 6) { 
+			     			if ($image == true) {
+			     				echo '<div class="column small-12 medium-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt="'. $image['alt'] .'"><figcaption>'. $grandchild->name .'</figcaption></figure></a></div>';
+			     			}else {
+			     				echo '<div class="small-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
+			     			}
+			     			 
+			     		}else {
+			     			
+			     				echo '<div class="column small-12 medium-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
+			     		}
+			     	}
+			     	echo '</div><a class="scroll-to" href="#top"><span class="dashicons dashicons-arrow-up-alt"></span>back to top</a></section>';
+			 	} 
+			?>
+			</div>
+		<?php endif; ?>
+	</div><!-- .row -->
 
 
 
