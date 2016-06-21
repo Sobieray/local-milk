@@ -26,6 +26,7 @@
 		    $this_category = get_category_by_slug($slug);
 		    $categories = get_categories( array(
 		    	'parent'  => $this_category->cat_ID,
+		    	'orderby' => 'id'
 		    ) );
 		    $result = count($categories);
 		    if (is_page('recipes')) {
