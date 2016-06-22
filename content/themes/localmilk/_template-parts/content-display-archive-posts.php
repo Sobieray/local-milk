@@ -4,7 +4,6 @@
  *
  */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('column small-12 medium-4'); ?>>
 	<?php
 		if ( has_post_thumbnail() ) {

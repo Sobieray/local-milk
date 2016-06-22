@@ -36,12 +36,12 @@
 
 					 	$url = get_category_link( $category->term_id );
 					 	echo '<div class="column small-12 medium-4"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
-					 }else {
+					} else {
 					 	$image = get_field($category->slug, 'option');
 
 					 	$url = get_category_link( $category->term_id );
 					 	echo '<div class="column small-12 medium-6"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
-					 }
+					}
 			  	}
 			} else {
 			    foreach ( $categories as $category ) {

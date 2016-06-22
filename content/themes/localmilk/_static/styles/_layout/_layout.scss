@@ -492,6 +492,13 @@ Sub Category Template
 		margin-top: 10vh;
 		margin-bottom: 29vh;
 	}
+	.text-center.screen-height {
+		margin-top: 35vh;
+		margin-bottom: 35vh;
+		font-size: rem-calc(9.38);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
 }
 .category {
 	.cushion {
