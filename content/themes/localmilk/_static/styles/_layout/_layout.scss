@@ -72,7 +72,7 @@ nav#primary-nav {
 			}
 			a {
 				letter-spacing: rem-calc(4);
-				font-size: rem-calc(12);
+				font-size: rem-calc(11.25);
 				padding: 20px 2.47vw;
 			}
 		}
@@ -133,7 +133,11 @@ nav#primary-nav {
 			}
 		}
 	}
+	.dropdown.menu>li.is-dropdown-submenu-parent>a {
+		padding-right: 2.47vw;
+	}
 	.is-dropdown-submenu-parent:before {
+		@include center(horizontal)
 		content: '';
 	    height: 10px;
 	    width: 30px;
@@ -142,7 +146,6 @@ nav#primary-nav {
 	    background-size: contain;
 	    display: block;
 	    margin: 0 auto;
-	    position: absolute;
 	    bottom: -10px;
 	    z-index: -1;
 	    left: 50%;
@@ -153,18 +156,20 @@ nav#primary-nav {
 		z-index: 99;
 	}
 	.dropdown.menu>li.opens-right>.is-dropdown-submenu {
-		left: -20%;
-		top: 102%;
+		@include center(horizontal)
+		//left: -20%;
+		//top: 102%;
 		transition: height ease 0.2s;
 		height: 0;
 		overflow: hidden;
 		&.js-dropdown-active {
-			height: 319px;;
+			height: auto;
 			border: 1px solid transparent;
 			border-image: url(_static/images/dropdown-border.png) 1 repeat;
 		}
 	}
 	.is-dropdown-submenu {
+
 		 background-color: $white;
 		 transition: all ease 0.2s;
 		 display: block;
@@ -172,6 +177,7 @@ nav#primary-nav {
 		 li a {
 		 	width: 220px;
 		 	padding: 20px 0px;
+		 	font-size: rem-calc(9.38);
 		 }
 	}
 	
@@ -390,9 +396,8 @@ Sub Category Template
 	.entry-header {
 		background-repeat: no-repeat;
 		background-size: cover;
-		padding: 90px;
 		text-align: center;
-		margin-bottom: 50px;
+		height: 182px;
 		.title-search {
 			position: relative;
 			h1 {
@@ -481,8 +486,8 @@ Sub Category Template
 		}
 	}
 	.screen-height {
-		margin-top: 16%;
-		margin-bottom: 16%;
+		margin-top: 10vh;
+		margin-bottom: 29vh;
 	}
 }
 .category {
