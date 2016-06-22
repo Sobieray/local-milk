@@ -427,9 +427,12 @@ Sub Category Template
 		margin-top: 110px;
 		input[type=image] {
 			position: absolute;
-			top: 0;
-			right: 0;
-			width: 30px;
+			top: 40%;
+			right: 3%;
+			width: 10px;
+		}
+		input[type=text] {
+			height: 30px;
 		}
 	}
 	figure {
