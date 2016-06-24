@@ -48,10 +48,11 @@
 	</header><!-- /.entry-header -->
 
 	<div class="group">
-		<div class="small-4 column entry-date">
-			<p><?php the_date('m.d.Y'); ?></p>
-		</div>
-		<div class="small-8 column entry-content">
+		
+		<div class="entry-content">
+			<div class="small-4 column entry-date">
+				<p><?php the_date('m.d.Y'); ?></p>
+			</div>
 			<?php the_content(); ?>
 		</div>
 	</div><!-- /.row -->

@@ -248,6 +248,10 @@ Blog
 		.entry-content {
 			font-size: rem-calc(17);
 			padding-right: 0;
+			p:nth-child(2) {
+				width: 66%;
+				display: inline-block;
+			}
 
 		}
 		.read-more {
