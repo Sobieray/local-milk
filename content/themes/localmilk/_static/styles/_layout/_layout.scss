@@ -231,6 +231,7 @@ Blog
 			letter-spacing: rem-calc(1.5);
 			margin-top: 17px;
 			margin-bottom: 20px;
+			line-height: 32px;
 			a {
 				border-bottom: 1px solid $black;
 				padding-bottom: 5px;
@@ -289,7 +290,25 @@ Blog
 			    top: 6px;
 			    margin-right: 5px;
 			}
+			&:nth-child(2) {
+				float: right;
+				&:before {
+					display: none;
+				}
+				&:after {
+					content: " ";
+					background-image: url(_static/images/icons/Arrow.png);
+					background-size: contain;
+				    position: relative;
+				    width: 17px;
+				    height: 17px;
+				    display: inline-block;
+				    top: 6px;
+				    margin-left: 5px;
+				}
+			}
 		}
+
 	}
 	.tags {
 		font-size: rem-calc(9.38);
@@ -320,7 +339,7 @@ Blog
 	}
 	
 }
-.blog {
+.blog, .single {
 	.cushion {
 		padding-top: 115px;
 	}
