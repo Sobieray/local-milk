@@ -27,7 +27,9 @@ a {
 	padding-top: 54px;
 }
 
-
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+	float: left;
+}
 /*******************
 Social Media
 ********************/
@@ -174,7 +176,8 @@ Popular Posts
 			margin-right: 0;
 		}
 		img {
-			max-height: 140px;
+			height: 140px;
+			width: 100%;
 			object-fit: cover;
 		}	
 	}
