@@ -14,7 +14,7 @@ function aa_enqueue_scripts() {
 	wp_enqueue_script( 'velocity' );
 
 	/* Enqueue Main JS */
-	wp_register_script( 'main', get_template_directory_uri() . '/_static/js/main.js', array( 'jquery' ), '', true);
+	wp_register_script( 'main', get_template_directory_uri() . '/_static/js/main.min.js', array( 'jquery' ), '', true);
 	wp_enqueue_script( 'main' );
 
 	wp_register_script('modernizr', get_template_directory_uri(). '/_static/js/modernizr.min.js', array('jquery'), '', true);

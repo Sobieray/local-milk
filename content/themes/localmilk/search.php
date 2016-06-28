@@ -5,19 +5,29 @@
 
 get_header();
 ?>
-
-<div class="container">
+<div class="row cushion">
 
 	<?php
 	if ( have_posts() ) : ?>
 
-		<header>
-			<h1><?php printf( esc_html__( 'Search Results for: %s', 'test' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		</header><!-- .page-header -->
+		<header class="text-center">
+			<h1><?php printf( esc_html__( 'You Searched for: %s', 'test' ), '<br><span>' . get_search_query() . '</span>' ); ?></h1>
+			<?php 
+			global $wp_query;
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;	
+			$count = $paged * 9;
+			echo '<h2>showing '. $count . ' of '. $wp_query->found_posts .' results found</h2>';
+			
 
+
+			?>
+		</header><!-- .page-header -->
+		<section class="group">
 		<?php
 		/* Start the Loop */
+		query_posts($query_string . '&posts_per_page=9');
 		while ( have_posts() ) : the_post();
+		
 
 			/**
 			 * Run the loop for the search to output the results.
@@ -27,15 +37,17 @@ get_header();
 			get_template_part( '_template-parts/content', 'search' );
 
 		endwhile;
+		echo '</section>';
 
-		the_posts_navigation();
+		echo '<div class="post-navigation group"><p>'; 
+		posts_nav_link(' ','previous','next');
+		echo '</p></div>';
 
 	else :
 
 		get_template_part( '_template-parts/content', 'none' );
 
 	endif; ?>
-
+	
 </div> <!-- /.container -->
-
 <?php get_footer(); ?>

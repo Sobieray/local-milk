@@ -199,6 +199,26 @@ nav#primary-nav {
 Header
 ****************************/
 
+/****************************
+Page Template Default
+****************************/
+.page-template-default {
+	.entry-title {
+		margin-top: 90px;
+	}
+	.faq {
+		p {
+			font-size: rem-calc(16.88);
+			&:first-child {
+				border-bottom: 1px solid $light-gray;
+				text-transform: uppercase;
+				font-family: $body-font-second;
+				font-size: rem-calc(9.38);
+				margin-top: 43px;
+			}
+		}
+	}
+}
 
 
 /****************************
@@ -415,7 +435,7 @@ Faux Landing Page
 /****************************
 Sub Category Template
 ****************************/
-.page-template-sub-category-template, .category {
+.page-template-sub-category-template, .category, .page {
 	.entry-header {
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -523,13 +543,14 @@ Sub Category Template
 		letter-spacing: 1px;
 	}
 }
-.category {
+.category, .search {
 	.cushion {
 		padding-top: 115px;
 	}
 	article {
 		img {
-			max-height: 132px;
+			height: 132px;
+			width: 100%;
 			object-fit: cover;
 		}
 	}
@@ -539,6 +560,79 @@ Sub Category Template
 		letter-spacing: rem-calc(1.5);
 		margin-top: 17px;
 		margin-bottom: 20px;
+	}
+}
+/****************************
+404 & Search
+****************************/
+.error404, .search {
+	.text-center.screen-height {
+		margin-top: 35vh;
+		margin-bottom: 35vh;
+		font-size: rem-calc(16.88);
+		letter-spacing: 1px;
+		h1 {
+			text-transform: uppercase;
+			font-size: rem-calc(13.13);
+		}
+		form {
+			position: relative;
+			max-width: 288px;
+			margin: 0 auto;
+			input[type=image] {
+				position: absolute;
+				top: 40%;
+				right: 3%;
+				width: 10px;
+			}
+			input[type=text] {
+				height: 30px;
+			}
+		}
+	}
+}
+.search-results {
+	header.text-center {
+		margin-bottom: 53px;
+		padding-bottom: 32px;
+		border-bottom: 1px solid $light-gray;
+		h1 {
+			font-size: rem-calc(11.25);
+			span {
+				display: inline-block;
+				font-size: rem-calc(13.13);
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				border-bottom: 1px solid $light-gray;
+				margin-top: 10px;
+
+			}
+		}
+		h2 {
+			font-size: rem-calc(9.38);
+			font-style: italic;
+			margin-top: 10px;
+		}
+	}
+	.post-navigation {
+		font-style: italic;
+		font-size: rem-calc(13.13);
+		width: 100%;
+		a:nth-of-type(1) {
+			float: left;
+			&:before {
+				content: '<';
+				padding-right: 10px;
+			}
+
+		}
+		a:nth-of-type(2) {
+			float: right;
+			&:after {
+				content: '>';
+				padding-left: 10px;
+			}
+		}
 	}
 }
 /****************************

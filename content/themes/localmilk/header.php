@@ -33,7 +33,11 @@
 <?php 
 	$images_dir = get_bloginfo('template_directory') . '/_static/images';
 ?>
+<?php if(is_404() || is_search()) : ?>
+<body <?php body_class(); ?>>
+<?php else: ?>
 <body <?php body_class('page-' . $post->post_name); ?>>
+<?php endif; ?>
 	<nav id="primary-nav">
 		<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
 		  <button class="menu-icon" type="button" data-toggle></button>
