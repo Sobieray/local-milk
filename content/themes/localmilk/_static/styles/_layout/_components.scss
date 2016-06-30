@@ -232,7 +232,6 @@ Comments
 /*********************
 Press & Awards
 *********************/
-
 ul.press {
 	margin: 0;
 	margin-top: 40px;
@@ -268,4 +267,33 @@ ul.awards {
 	border-bottom: 1px solid $light-gray;
 	font-size: rem-calc(9.38);
 	text-transform: uppercase;
+}
+/*********************
+Gravity Forms
+**********************/
+#gform_wrapper_1 {
+	form {
+		position: static;
+    	max-width: 100%;
+    	margin: 0 auto;
+    	margin-top: 0px;
+    	font-family: $body-font-family;
+    	text-transform: uppercase;
+    	letter-spacing: 1px;
+    	label {
+    		font-size: rem-calc(8);
+    		font-family: $body-font-second;
+    	}
+    	.gform_button {
+	    	float: right;
+	    	background: transparent;
+	    	border: 1px solid $black;
+	    	font-family: $body-font-family;
+	    	font-size: rem-calc(13.13);
+	    	font-style: italic;
+	    	text-transform: lowercase;
+	    	color: $black;
+	    	padding: 10px 20px;
+	    }
+	}
 }

@@ -203,6 +203,9 @@ Header
 Page Template Default
 ****************************/
 .page-template-default {
+	.row.cushion {
+		width: 712px;
+	}
 	.entry-title {
 		margin-top: 90px;
 	}
@@ -553,6 +556,9 @@ Sub Category Template
 			height: 132px;
 			width: 100%;
 			object-fit: cover;
+		}
+		header.entry-header {
+			height: auto;
 		}
 	}
 	.entry-title {
