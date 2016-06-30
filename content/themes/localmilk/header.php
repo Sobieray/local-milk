@@ -39,14 +39,20 @@
 <body <?php body_class('page-' . $post->post_name); ?>>
 <?php endif; ?>
 	<nav id="primary-nav">
-		<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+		<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
+			<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo"></a>
 		  <button class="menu-icon" type="button" data-toggle></button>
-		  <div class="title-bar-title">Menu</div>
 		</div>
-
 		<div class="top-bar" id="main-menu">
 		  <div class="top-bar-title">
 		  	<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo" width="140"></a>
+		  	<span class="pencil-vert-border"></span>
+		  </div>
+		  <div class="search hide-for-large">
+		  	<form action="/" method="get" class="closed">
+		  	    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="search" />
+		  	    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" />
+		  	</form>
 		  	<span class="pencil-vert-border"></span>
 		  </div>
 		  <div class="top-bar-left">
@@ -60,21 +66,26 @@
 			));
 		    ?>
 		  </div>
-		   <div class="top-bar-right">
-		    <?php if ( is_active_sidebar( 'social-media' ) ) : ?>
-				<?php dynamic_sidebar( 'social-media' ); ?>
-			<?php endif; ?>
-			<span class="pencil-vert-border"></span>
-			<div class="search">
-				<form action="/" method="get" class="closed">
-				    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="search" />
-				    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" />
-				</form>
-				<img src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" alt="search icon">
+		  <div class="top-bar-right show-for-large-only">
+			  <?php if ( is_active_sidebar( 'social-media' ) ) : ?>
+					<?php dynamic_sidebar( 'social-media' ); ?>
+				<?php endif; ?>
 				<span class="pencil-vert-border"></span>
+				<div class="search">
+					<form action="/" method="get" class="closed">
+					    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="search" />
+					    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" />
+					</form>
+					<img src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" alt="search icon">
+					<span class="pencil-vert-border"></span>
+				</div>
+		  </div><!-- //.top-bar-right -->
+		  <div class="hide-for-large">
+			  <?php if ( is_active_sidebar( 'social-media' ) ) : ?>
+					<?php dynamic_sidebar( 'social-media' ); ?>
+				<?php endif; ?>
 			</div>
-		  </div>
-		</div>
+		</div><!-- //.top-bar -->
 		<span class="pencil-border"></span>
 	</nav>
 

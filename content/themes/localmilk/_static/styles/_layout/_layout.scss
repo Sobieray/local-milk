@@ -204,7 +204,7 @@ Page Template Default
 ****************************/
 .page-template-default {
 	.row.cushion {
-		width: 712px;
+		max-width: 712px;
 	}
 	.entry-title {
 		margin-top: 90px;
@@ -692,6 +692,30 @@ About
 			letter-spacing: 2px;
 			a {
 				border-bottom: 1px solid $black;
+			}
+		}
+	}
+}
+/*********************
+Shop
+**********************/
+.page-shop {
+	.entry-content.row {
+
+	}
+	figure {
+		figcaption {
+			padding-top: 20px;
+			position: static;
+			transform: none;
+			color: $black;
+			border: 1px solid $light-gray;
+			border-top: none;
+			background-color: $white;
+		}
+		&:hover {
+			figcaption {
+				color: $light-gray;
 			}
 		}
 	}

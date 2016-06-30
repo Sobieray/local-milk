@@ -21,11 +21,11 @@ get_header();
 		get_template_part('segments/faq-repeater');
 	} else if (is_page('press-awards')) {
 		get_template_part('segments/press-awards');
+	} else if (is_page('shop')) {
+		get_template_part('segments/shop-repeater');
 	} else {
 	    while ( have_posts() ) : the_post();
-
 	        get_template_part( '_template-parts/content', 'page' );
-
 	    endwhile; // End of the loop.
 	} ?>
 </div> <!-- /.container -->
