@@ -637,8 +637,63 @@ Sub Category Template
 	}
 }
 /****************************
+About
+****************************/
+.page-about {
+	.entry-content {
+		p {
+		  font-size: rem-calc(16.88);
+		}
+		blockquote {
+			border: none;
+			color: $black;
+			margin-bottom: 20px;
+			p {
+				color: $black;
+				font-size: rem-calc(20.63);
+				width: 50%;
+				margin: 0 auto;
+				margin-bottom: 10px;
+				&:last-child {
+					font-size: rem-calc(8);
+				}
+			}
+			&:nth-of-type(2) {
+				float: right;
+				width: 65%;
+				margin-bottom: 40px;
+
+				p {
+					width: 100%;
+					text-align: center;
+					padding: 40px 67px;
+				}
+				hr {
+					border-bottom: 1px solid $black;
+					margin: 0 auto;
+					width: 95%;
+
+				}
+			}
+		}
+		img.alignnone {
+				float: left;
+				margin: 0px 35px 15px 0px;
+		}
+		p:nth-child(16) {
+			font-size: rem-calc(13.13);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			a {
+				border-bottom: 1px solid $black;
+			}
+		}
+	}
+}
+/****************************
 Footer
 ****************************/
+
 footer {
 	text-transform: uppercase;
 	font-size: rem-calc(9.38);

@@ -19,6 +19,8 @@ get_header();
 <div class="row cushion">
 	<?php if (is_page('faq')) {
 		get_template_part('segments/faq-repeater');
+	} else if (is_page('press-awards')) {
+		get_template_part('segments/press-awards');
 	} else {
 	    while ( have_posts() ) : the_post();
 
@@ -26,7 +28,6 @@ get_header();
 
 	    endwhile; // End of the loop.
 	} ?>
-
 </div> <!-- /.container -->
 
 <?php get_footer(); ?>
