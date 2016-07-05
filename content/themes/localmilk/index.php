@@ -10,9 +10,9 @@
 get_header();
 ?>
 
-<div class="row cushion">
+<div class="row cushion mobile-switch">
 	<?php get_sidebar(); ?>
-	<div class="column small-12 medium-8">
+	<div class="column medium-8 order-1">
 	    <?php
 		if ( have_posts() ) :
 
@@ -30,7 +30,9 @@ get_header();
 
 </div> <!-- /.row -->
 <div id="popular-posts" class="row">
-    <p class="title">Popular Posts</p>
+    <div class="column">
+        <p class="title">Popular Posts</p>
+    </div>
     <?php 
         $popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
         while ( $popularpost->have_posts() ) : $popularpost->the_post();

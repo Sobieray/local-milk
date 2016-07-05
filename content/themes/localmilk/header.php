@@ -66,7 +66,7 @@
 			));
 		    ?>
 		  </div>
-		  <div class="top-bar-right show-for-large-only">
+		  <div class="top-bar-right show-for-large">
 			  <?php if ( is_active_sidebar( 'social-media' ) ) : ?>
 					<?php dynamic_sidebar( 'social-media' ); ?>
 				<?php endif; ?>

@@ -8,6 +8,6 @@ if ( ! is_active_sidebar( 'sidebar' ) ) {
 }
 ?>
 
-<aside class="widget-area column small-12 medium-4" role="complementary">
+<aside class="widget-area column medium-4 order-2" role="complementary">
 	<?php dynamic_sidebar( 'sidebar' ); ?>
 </aside>

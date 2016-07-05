@@ -5,7 +5,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('small-12 medium-6 large-4 column'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('small-6 large-4 column'); ?>>
 	<header class="entry-header">
 
 		<?php 

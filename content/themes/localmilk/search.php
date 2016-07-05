@@ -39,7 +39,7 @@ get_header();
 		endwhile;
 		echo '</section>';
 
-		echo '<div class="post-navigation group"><p>'; 
+		echo '<div class="post-navigation group column"><p>'; 
 		posts_nav_link(' ','previous','next');
 		echo '</p></div>';
 

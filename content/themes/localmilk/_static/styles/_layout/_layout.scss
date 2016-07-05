@@ -7,6 +7,8 @@ e.g. nav, header, footer, etc.
 body {
 	background-image: url(_static/images/background.png);
 	background-repeat: no-repeat;
+	background-repeat-y: repeat;
+	height: auto;
 }
 /****************************
 Navigation
@@ -364,7 +366,11 @@ Blog
 		}
 
 	}
-	
+	.entry-title {
+		border-bottom: 1px solid $black;
+		padding-bottom: 3px;
+		display: inline;
+	}
 }
 .blog, .single {
 	.cushion {
@@ -724,9 +730,12 @@ Shop
 Footer
 ****************************/
 
-footer {
+footer.site-footer {
 	text-transform: uppercase;
 	font-size: rem-calc(9.38);
+	background-image: url(_static/images/footer-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 	.social-contact {
 		position: relative;
 		padding-bottom: 13px;
@@ -747,5 +756,13 @@ footer {
 		float: right;
 		font-family: $body-font-second;
 		font-size: rem-calc(7.5);
+		li {
+			display: inline-block;
+			&:first-child {
+				border-right: 1px solid $black;
+				padding-right: 10px;
+				margin-right: 10px;
+			}
+		}
 	}
 }//footer

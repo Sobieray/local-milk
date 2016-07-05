@@ -35,12 +35,12 @@
 					 	$image = get_field($category->slug, 'option');
 
 					 	$url = get_category_link( $category->term_id );
-					 	echo '<div class="column small-12 medium-4"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 	echo '<div class="column medium-4"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
 					} else {
 					 	$image = get_field($category->slug, 'option');
 
 					 	$url = get_category_link( $category->term_id );
-					 	echo '<div class="column small-12 medium-6"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 	echo '<div class="column medium-6"><a href="#'. $category->slug .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
 					}
 			  	}
 			} else {
@@ -49,12 +49,12 @@
 					 	$image = get_field($category->slug, 'option');
 
 					 	$url = get_category_link( $category->term_id );
-					 	echo '<div class="column small-12 medium-4"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 	echo '<div class="column medium-4"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
 					 }else {
 					 	$image = get_field($category->slug, 'option');
 
 					 	$url = get_category_link( $category->term_id );
-					 	echo '<div class="column small-12 medium-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 	echo '<div class="column medium-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
 					 }
 			  	}
 			}
@@ -87,14 +87,14 @@
 			     		//one column list if categoreis are less than 6
 			     		if ($result < 6) { 
 			     			if ($image == true) {
-			     				echo '<div class="column small-12 medium-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt="'. $image['alt'] .'"><figcaption>'. $grandchild->name .'</figcaption></figure></a></div>';
+			     				echo '<div class="column small-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt="'. $image['alt'] .'"><figcaption>'. $grandchild->name .'</figcaption></figure></a></div>';
 			     			}else {
-			     				echo '<div class="small-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
+			     				echo '<div class="medium-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
 			     			}
 			     			 
 			     		}else {
 			     			
-			     				echo '<div class="column small-12 medium-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
+			     				echo '<div class="column medium-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
 			     		}
 			     	}
 			     	echo '</div><a class="scroll-to" href="#top"><span class="dashicons dashicons-arrow-up-alt"></span>back to top</a></section>';
