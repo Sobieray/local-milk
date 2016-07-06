@@ -444,7 +444,7 @@ Faux Landing Page
 /****************************
 Sub Category Template
 ****************************/
-.page-template-sub-category-template, .category, .page {
+.page-template-sub-category-template, .category, .page, .tag {
 	.entry-header {
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -552,7 +552,7 @@ Sub Category Template
 		letter-spacing: 1px;
 	}
 }
-.category, .search {
+.category, .search, .tag {
 	.cushion {
 		padding-top: 115px;
 	}
