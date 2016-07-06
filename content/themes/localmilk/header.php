@@ -39,7 +39,7 @@
 <body <?php body_class('page-' . $post->post_name); ?>>
 <?php endif; ?>
 	<nav id="primary-nav">
-		<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
+		<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="xlarge">
 			<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo"></a>
 		  <button class="menu-icon" type="button" data-toggle></button>
 		</div>
@@ -48,7 +48,7 @@
 		  	<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo" width="140"></a>
 		  	<span class="pencil-vert-border"></span>
 		  </div>
-		  <div class="search hide-for-large">
+		  <div class="search hide-for-xlarge">
 		  	<form action="/" method="get" class="closed">
 		  	    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="search" />
 		  	    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" />
@@ -66,7 +66,7 @@
 			));
 		    ?>
 		  </div>
-		  <div class="top-bar-right show-for-large">
+		  <div class="top-bar-right show-for-xlarge-only">
 			  <?php if ( is_active_sidebar( 'social-media' ) ) : ?>
 					<?php dynamic_sidebar( 'social-media' ); ?>
 				<?php endif; ?>
@@ -80,7 +80,7 @@
 					<span class="pencil-vert-border"></span>
 				</div>
 		  </div><!-- //.top-bar-right -->
-		  <div class="hide-for-large">
+		  <div class="hide-for-xlarge">
 			  <?php if ( is_active_sidebar( 'social-media' ) ) : ?>
 					<?php dynamic_sidebar( 'social-media' ); ?>
 				<?php endif; ?>

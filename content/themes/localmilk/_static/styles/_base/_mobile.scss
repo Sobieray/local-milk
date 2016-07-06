@@ -277,16 +277,142 @@ Media Queries & Mobile Styles
 		}
 	}
 }
-@media (min-width: 1024px) and (max-width: 1405px) {
+@media (max-width: 1405px) {
 	.top-bar {
-		.top-bar-right {
-	    	position: absolute;
-	    	top: 64px;
-	    	right: 0;
-	    }
 	    .top-bar-title {
 	    	padding: 11px 25px;
 	    }
+	    .top-bar-left {
+	    	li {
+	    		a {
+	    			padding: 20px 1.5vw;
+	    		}
+	    	}
+	    }
+
 	}
+}
+@include breakpoint(xlarge down) {
+	.show-for-xlarge-only {
+		display: none;
+	}
+}
+@include breakpoint(xlarge up) {
+	.hide-for-xlarge {
+		display: none;
+	}
+	.show-for-xlarge {
+		display: block!important;
+	}
+	.show-for-xlarge-only {
+		display: block;
+	}
+}
+
+@media (max-width: 1199px) {
+	nav#primary-nav {
+		.title-bar {
+			background-image: url(_static/images/navbar-wc.png);
+			background-repeat: no-repeat;
+			background-color: transparent;
+			border: none;
+			img {
+				width: 100px;
+				margin: 0 auto;
+				display: block;
+			}
+
+			.menu-icon {
+				float: right;
+				color: $black;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				height: 54px;
+				width: 60px;
+				padding: 15px;
+				&:focus {
+					outline: none;
+				}
+				&:after {
+					background: $black;
+					box-shadow: 0 7px 0 $black,0 14px 0 $black;
+					height: 1px;
+					width: 40%;
+					top: 17px;
+					left: 17px;
+				}
+			}
+		}
+		.top-bar {
+			background: none;
+			height: 100vh;
+			overflow: scroll;
+			.top-bar-left, .top-bar-right {
+				width: 100%;
+			}
+			.top-bar-title {
+				display: none;
+			}
+			.top-bar-left li {
+				display: block;
+				border-bottom: 1px solid $light-gray;
+				text-align: left;
+				&:after {
+					content: none;
+				}
+			}
+			.dropdown.menu>li.opens-right>.is-dropdown-submenu {
+				position: relative;
+				border: none;
+				left: 0;
+				transform: none;
+			}
+			.vertical.menu li {
+				border-bottom: 0;
+				text-align: left;
+				a {
+					padding: 20px 0px;
+
+				}
+			}
+			.is-dropdown-submenu-parent:before {
+				display: none;
+			}
+			.search {
+				form {
+					position: relative;
+					max-width: 288px;
+					margin: 0 auto;
+					input {
+						max-width: 100%;
+					}
+					input[type="image"] {
+						position: absolute;
+						top: 40%;
+						right: 3%;
+						width: 10px;
+					}
+				}
+			}
+			#socialMedia {
+				height: 55px;
+				width: 100%;
+				li {
+					width: 20%;
+					a img {
+						width: 20px;
+						display: block;
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+		span.pencil-border {
+			background: none;
+			border-bottom: 1px solid $light-gray;
+		}
+	}
+	
 
 }
