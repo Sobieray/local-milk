@@ -52,17 +52,19 @@ Social Media
 Widgets
 ********************/
 .widget-area {
+	padding: 0px 35px 0px 0px;
 	.title {
 		font-size: rem-calc(11.25);
 		text-transform: uppercase;
 		border-bottom: 1px solid $black;
-		padding-bottom: 10px;
+		padding-bottom: 6px;
 		margin-bottom: 18px;
 		letter-spacing: 4px;
 	}
 	.bio {
 		font-size: rem-calc(16.88);
 		margin-top: 25px;
+		line-height: 1.4;
 		span {
 			font-size: rem-calc(13.94);
 			text-transform: uppercase;
@@ -109,7 +111,7 @@ Widgets
 	    	}
 		}
 	    li {
-	    	padding-bottom: 27px;
+	    	padding-bottom: 21px;
 	    	
 	    }
 		li:before {
@@ -117,6 +119,7 @@ Widgets
 		    color: $black;
 		    width: 0;
 		    white-space: nowrap;
+		    margin-top: 7px;
 		    content: ". . . . . . . . . . . . . . . . . . . . "
 				 	 ". . . . . . . . . . . . . . . . . . . . "
 				 	 ". . . . . . . . . . . . . . . . . . . . "
@@ -131,18 +134,30 @@ Widgets
 		}
 		span:first-child {
 	    	padding-right: 0.33em;
-	    	background: #f8f8f8;
+	    	background: #ffffff;
 	    }
 		span + span {
 		    float: right;
 		    padding-left: 0.33em;
-		    background: #f8f8f8;
+		    background: #fdfdfd;
+		    line-height: 24px;
 		}
 		a:hover {
 			li span.roman {
 				color: $light-gray;
 			}
 		}
+	}//ol.toc
+	.fbf-widget label, .rss {
+		font-family: $body-font-second;
+		text-transform: uppercase;
+		font-size: rem-calc(8);
+	}
+	.fbf-widget label {
+		line-height: 32px;
+	}
+	.rss {
+		text-indent: 10px;
 	}
 }//.widget-area
 
@@ -151,7 +166,7 @@ Popular Posts
 ********************/
 #popular-posts {
 	.title {
-		font-size: rem-calc(11.25);
+		font-size: 0.80312rem;
 		text-transform: uppercase;
 		border-bottom: 1px solid $black;
 		padding-bottom: 10px;
@@ -163,7 +178,8 @@ Popular Posts
 		}
 	.entry-title {
 		text-transform: uppercase;
-		font-size: rem-calc(8);
+		font-size: 0.6rem;
+		font-family: $body-font-second;
 		letter-spacing: rem-calc(1.5);
 		margin-top: 17px;
 		margin-bottom: 20px;
@@ -202,8 +218,10 @@ Comments
 		display: inline;
 	}
 	.comments-title {
-		margin-top: 30px;
+		margin: 30px 0px;
 		font-size: rem-calc(15);
+		text-transform: uppercase;
+		letter-spacing: 0.05rem;
 	}
 	.comment-list, .children {
 	    list-style-type: none;
@@ -213,14 +231,8 @@ Comments
 	    	border-bottom: none;
 	    }
 	}
-	.comment-meta {
-		float: left; 
-		width: 50%;
-	}
 	.comment-content {
-		float: right;
-		width: 50%;
-		margin-top: 30px;
+		margin-top: 10px;
 
 	}
 	.reply {
@@ -228,13 +240,43 @@ Comments
     	width: 100%;
     	text-align: right;
 	}
+	.comment-author.vcard {
+		text-transform: uppercase;
+		font-size: .7225rem;
+		letter-spacing: .09375rem;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		line-height: 10px;
+		img {
+			display: none;
+		}
+	}
+	.comment-metadata {
+		time {
+			text-transform: uppercase;
+			font-size: .5rem;
+			font-family: Montserrat,sans-serif;
+			letter-spacing: 1px;
+			margin-top: 0px;
+			line-height: 10px;
+		}
+	}
+	ol.children {
+		margin: 20px 0px;
+		border-top: 1px solid $light-gray;
+		padding: 20px 0px 20px 40px;
+	}
 }
 /*********************
 Press & Awards
 *********************/
+.table {
+	display: table;
+	margin: 0 auto;
+}
 ul.press {
 	margin: 0;
-	margin-top: 40px;
+	padding-top: 40px;
 	li {
 		font-size: rem-calc(11.25);
 		text-transform: uppercase;
@@ -243,10 +285,14 @@ ul.press {
 		text-align: center;
 		list-style-type: none;
 		position: relative;
+		display: inline-block;
+		padding-right: 15px;
+		margin-left: 10px;
+		padding-top: 15px;
 		&:after {
 			content: '|';
 			position: absolute;
-			right: 0;
+			right: 0px;
 		}
 	}
 }
@@ -255,18 +301,24 @@ ul.awards {
 	margin: 0 auto;
 	margin-bottom: 120px;
 	li {
-		width: 33%;
+		width: 32.8885%;
 		border: none;
-		padding: 0px 20px;
+		padding: 0px 10px;
 		display: inline-block;
+		img {
+			display: block;
+			margin: 0 auto;
+		}
 	}
 
 }
 .text-center.underline {
 	margin-top: 60px;
+	padding-bottom: 2px;
 	border-bottom: 1px solid $light-gray;
 	font-size: rem-calc(9.38);
 	text-transform: uppercase;
+	letter-spacing: 0.1rem;
 }
 /*********************
 Gravity Forms
@@ -287,13 +339,79 @@ Gravity Forms
     	.gform_button {
 	    	float: right;
 	    	background: transparent;
-	    	border: 1px solid $black;
+	    	border: 1px solid #a3a3a3;
 	    	font-family: $body-font-family;
 	    	font-size: rem-calc(13.13);
 	    	font-style: italic;
 	    	text-transform: lowercase;
 	    	color: $black;
-	    	padding: 10px 20px;
+	    	padding: 8px 20px;
+	    	&:hover {
+	    		color: $light-gray;
+	    	}
 	    }
+	    .gfield_required {
+	    	display: none;
+	    }
+	}
+}
+/* Recipes Ziplist */
+.zlrecipe-container-border {
+	padding: 35px;
+	.b-b {
+		border-bottom: 1px solid transparent !important;
+	}
+	#zlrecipe-title.h-1 {
+		text-transform: uppercase;
+	    font-size: .58625rem;
+	    letter-spacing: .09375rem;
+	    margin-top: 17px;
+	    margin-bottom: 20px;
+	    line-height: 22px;
+	    border-bottom: 1px solid $black !important;
+	    display: inline-block;
+	    padding-bottom: 0 !important;
+	}
+}
+#zlrecipe-container {
+	.zlrecipe-print-link .butn-link {
+		display: inline-block !important;
+	}
+	.zl-recipe-link {
+		display: none;
+	}
+	.h-4 {
+		text-transform: uppercase;
+		font-size: rem-calc(8) !important;
+		font-weight: normal !important;
+		letter-spacing: 0.05rem;
+		margin: 10px 0px;
+
+	}
+	ul, ol {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	ol {
+		padding-left: 1rem !important;
+	}
+	.ingredient-label {
+		left: 0 !important;
+		text-transform: uppercase;
+		font-size: rem-calc(8);
+		letter-spacing: 0.05rem;
+	}
+	.img-desc-wrap {
+		background-color: transparent !important;
+	}
+	.zlrecipe-print-link {
+		background-image: url(_static/images/icons/Printericon.png);
+		background-size: 100% 100%;
+		margin-top: 20px !important;
+		width: 15px;
+		height: 15px;
+		.butn-link {
+			opacity: 0;
+		}
 	}
 }

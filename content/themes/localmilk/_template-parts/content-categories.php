@@ -97,7 +97,7 @@
 			     				echo '<div class="column medium-6 cat-list"><a class="sub-categories" href="'. $url .'">'. $grandchild->name .'</a></div>';
 			     		}
 			     	}
-			     	echo '</div><a class="scroll-to" href="#top"><span class="dashicons dashicons-arrow-up-alt"></span>back to top</a></section>';
+			     	echo '</div><a class="scroll-to" href="#top"><span><img src="'. get_bloginfo('template_directory') . '/_static/images/back-to-top-arrow.svg" alt="scroll to top of the page"</span>back to top</a></section>';
 			 	} 
 			?>
 			</div>

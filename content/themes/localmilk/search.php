@@ -11,12 +11,12 @@ get_header();
 	if ( have_posts() ) : ?>
 
 		<header class="text-center">
-			<h1><?php printf( esc_html__( 'You Searched for: %s', 'test' ), '<br><span>' . get_search_query() . '</span>' ); ?></h1>
+			<h1><?php printf( esc_html__( 'You searched for: %s', 'test' ), '<br><span>' . get_search_query() . '</span>' ); ?></h1>
 			<?php 
 			global $wp_query;
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;	
 			$count = $paged * 9;
-			echo '<h2>showing '. $count . ' of '. $wp_query->found_posts .' results found</h2>';
+			echo '<h2>Showing '. $count . ' of '. $wp_query->found_posts .' results</h2>';
 			
 
 

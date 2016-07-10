@@ -8,12 +8,14 @@
 		$price = get_sub_field('price');
 		$link = get_sub_field('link');
 		?>
-		<a href="<?php echo $link; ?>" target="_blank"><figure class="column small-12 medium-6 large-4">
-			<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-			<figcaption>
-				<p class="title"><?php echo $description; ?></p>
-				<p><?php echo $price; ?></p>
-			</figcaption>
-		</figure></a>
+		<div class="column small-12 medium-6 large-4">
+			<a href="<?php echo $link; ?>" target="_blank"><figure>
+				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+				<figcaption>
+					<p class="title"><?php echo $description; ?></p>
+					<p><?php echo $price; ?></p>
+				</figcaption>
+			</figure></a>
+		</div>
 	<?php endwhile; ?>
 <?php endif; ?>
