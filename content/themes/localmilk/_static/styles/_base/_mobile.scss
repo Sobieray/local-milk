@@ -103,6 +103,11 @@ Media Queries & Mobile Styles
 			border-bottom: 1px solid $light-gray;
 		}
 	}
+	.page-contact, .page-faq {
+		.row.cushion {
+			padding: 54px 15px;
+		}
+	}
 	
 
 }
@@ -141,6 +146,12 @@ Media Queries & Mobile Styles
 		}
 	}
 	.single, .blog {
+		header.entry-header {
+			text-align: center;
+		}
+		.entry-date {
+			text-align: center;
+		}
 		article {
 			.entry-content {
 				p:nth-child(2) {
@@ -161,6 +172,7 @@ Media Queries & Mobile Styles
 		}
 		.entry-date {
 			margin-top: 20px;
+			text-align: center;
 		}
 		#comments {
 			.comment-meta, .comment-content {
@@ -178,6 +190,28 @@ Media Queries & Mobile Styles
 				&:nth-child(2) {
 					float: none;
 				}
+			}
+		}
+	}
+	.page-template-sub-category-template { 
+		figure { 
+			img {
+				height: 296px;
+			} 
+		}
+	}
+	.category, .page-template-sub-category-template, .page, .search, .tag {
+		.medium-4 p {
+			border-top: none;
+			border-bottom: 1px solid $black;
+		}
+	}
+	.category, .search, .tag {
+		article {
+			padding: 0px 5px 0px 0.9375rem;
+			&:nth-of-type(2n) {
+				padding-left: 5px;
+				padding-right: 0.9375rem;
 			}
 		}
 	}
@@ -202,8 +236,11 @@ Media Queries & Mobile Styles
 			text-align: center;
 			font-size: rem-calc(11);
 		}
-		div.column img {
-			height: 240px;
+		div.column {
+			padding: 0;
+			img {
+				height: 240px;
+			}
 		}
 	}
 	.page-about {
@@ -232,6 +269,30 @@ Media Queries & Mobile Styles
 
  		}
  	}
+ 	.page-shop {
+ 		figure {
+ 			max-width: 250px;
+ 			margin: 0 auto;
+ 			margin-bottom: 20px;
+ 		}
+ 	}
+  	ul.awards {
+  		width: 100%;
+  	 	li {
+			width: 50%;
+			display: block;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+	}
+	ul.press { 
+		li {
+			display: block;
+			&:after {
+				content: none;
+			}
+		}
+	}
 	footer.site-footer {
 		padding-bottom: 50px;
 		background-position: 70% 50px;
@@ -243,12 +304,12 @@ Media Queries & Mobile Styles
 				display: block;
 				float: none;
 				margin-top: 30px;
-				font-size: rem-calc(14);
+				font-size: rem-calc(11);
 				letter-spacing: 4px;
 			}
 		}
 		.creators, .copyright {
-			font-size: rem-calc(12);
+			font-size: rem-calc(8);
 			display: block;
 			float: none;
 			text-align: center;
@@ -270,11 +331,19 @@ Media Queries & Mobile Styles
 		}
 	}
 	#season, #region {
+		.column.small-6 {
+			padding: 0px 10px 0px 0px;
+		}
 		figure {
+			margin-bottom: 10px;
 			img {
 				height: 138px;
 			}
 		}
+	}
+	.column, .columns {
+	    padding-left: rem-calc(15);
+	    padding-right: rem-calc(15);
 	}
 }
 @media (max-width: 1405px) {

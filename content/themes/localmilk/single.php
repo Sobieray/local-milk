@@ -30,7 +30,7 @@ get_header();
     </div>
 
 </div> <!-- /.row -->
-<div id="popular-posts" class="row">
+<div id="popular-posts" class="row show-for-medium">
     <p class="title column">Popular Posts</p>
     <?php 
         $popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );

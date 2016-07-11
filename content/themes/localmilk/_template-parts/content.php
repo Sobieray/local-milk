@@ -50,7 +50,7 @@
 	<div class="group">
 		
 		<div class="entry-content">
-			<div class="small-4 column entry-date">
+			<div class="medium-4 column entry-date">
 				<p><?php the_date('m.d.Y'); ?></p>
 			</div>
 			<?php the_content(); ?>

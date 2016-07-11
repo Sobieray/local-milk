@@ -183,6 +183,8 @@ Popular Posts
 		letter-spacing: rem-calc(1.5);
 		margin-top: 17px;
 		margin-bottom: 20px;
+		border: none;
+		display: block;
 	}
 	div.column {
 		width: 23%;
@@ -346,6 +348,8 @@ Gravity Forms
 	    	text-transform: lowercase;
 	    	color: $black;
 	    	padding: 8px 20px;
+	    	max-width: 75px;
+	    	line-height: 1;
 	    	&:hover {
 	    		color: $light-gray;
 	    	}
