@@ -11,7 +11,7 @@
 		<div class="row title-search">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<form action="/" method="get" class="closed">
-			    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="search" />
+			    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
 			    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" />
 			</form>
 		</div>
@@ -54,7 +54,7 @@
 					 	$image = get_field($category->slug, 'option');
 
 					 	$url = get_category_link( $category->term_id );
-					 	echo '<div class="column medium-6"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
+					 	echo '<div class="column medium-4 center"><a href="'. $url .'"><figure><img src="'. $image['url'] .'" alt=""><figcaption>'. $category->name .'</figcaption></figure></a></div>';
 					 }
 			  	}
 			}

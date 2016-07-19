@@ -36,6 +36,7 @@ Social Media
 #socialMedia {
 	display: inline-block;
 	float: left;
+	padding: 0px 0px;
 	ul {
 		margin: 0;
 	}
@@ -65,9 +66,10 @@ Widgets
 		font-size: rem-calc(16.88);
 		margin-top: 25px;
 		line-height: 1.4;
+		margin-bottom: 40px;
 		span {
-			font-size: rem-calc(13.94);
-			text-transform: uppercase;
+			font-size: rem-calc(16);
+			font-variant: small-caps;
 			letter-spacing: 2px;
 		}
 	}
@@ -92,6 +94,9 @@ Widgets
 		.subscription_btn {
 			display: none;
 		}
+	}
+	#table-contents {
+		margin: 40px 0px 19px;
 	}
 	ol.toc {
 	    max-width: 40em;
@@ -130,7 +135,7 @@ Widgets
 			display: inline-block;
 			width: auto;
 			counter-increment: itemnr; 
-			font-size: rem-calc(16.88);
+			margin-top: 6px;
 		}
 		span:first-child {
 	    	padding-right: 0.33em;
@@ -152,6 +157,7 @@ Widgets
 		font-family: $body-font-second;
 		text-transform: uppercase;
 		font-size: rem-calc(8);
+		letter-spacing: 0.07rem;
 	}
 	.fbf-widget label {
 		line-height: 32px;
@@ -165,11 +171,12 @@ Widgets
 Popular Posts
 ********************/
 #popular-posts {
+	margin-top: 50px;
 	.title {
-		font-size: 0.80312rem;
+		font-size: 0.70312rem;
 		text-transform: uppercase;
 		border-bottom: 1px solid $black;
-		padding-bottom: 10px;
+		padding-bottom: 6px;
 		margin-bottom: 18px;
 		letter-spacing: 4px;
 	}
@@ -220,7 +227,7 @@ Comments
 		display: inline;
 	}
 	.comments-title {
-		margin: 30px 0px;
+		margin: 75px 0px 30px;
 		font-size: rem-calc(15);
 		text-transform: uppercase;
 		letter-spacing: 0.05rem;
@@ -359,7 +366,33 @@ Gravity Forms
 	    }
 	}
 }
-/* Recipes Ziplist */
+/****************************
+Comment Form
+****************************/
+#commentform {
+	label {
+    		font-size: rem-calc(8);
+    		font-family: $body-font-second;
+    	}
+	#submit {
+		float: right;
+		background: transparent;
+		border: 1px solid #a3a3a3;
+		font-family: $body-font-family;
+		font-size: rem-calc(13.13);
+		font-style: italic;
+		text-transform: lowercase;
+		color: $black;
+		padding: 8px 20px;
+		line-height: 1;
+		&:hover {
+			color: $light-gray;
+		}
+	}
+}
+/*****************************
+Recipes Ziplist
+*****************************/
 .zlrecipe-container-border {
 	padding: 35px;
 	.b-b {

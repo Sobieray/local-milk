@@ -17,5 +17,8 @@ such as h1, h2, p, a, blockquote etc.
 }
 
 body {
-    font-size: $font-size-base; // 16px, set in variables.scss    
+    font-size: $font-size-base; // 16px, set in variables.scss 
+    position: relative;
+    padding-bottom: 150px;
+    min-height: 100vh;   
 }	

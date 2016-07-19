@@ -9,6 +9,7 @@ body {
 	background-repeat: no-repeat;
 	background-repeat-y: repeat;
 	height: auto;
+	background-attachment: fixed;
 }
 /****************************
 Navigation
@@ -39,7 +40,7 @@ nav#primary-nav {
 	padding: 0;
 	.top-bar-title {
 		position: relative;
-		padding: 11px 45px;
+		padding: 10px 25px !important;
 		margin: 0;
 		img {
 			width: 75px;
@@ -64,7 +65,7 @@ nav#primary-nav {
 				content: "|";
 				position: absolute;
 				right: 0;
-				top: 33%;
+				top: 30%;
 				font-size: 12px;
 			}
 			&:last-child {
@@ -137,6 +138,9 @@ nav#primary-nav {
 			&:last-child {
 				border-bottom: none;
 			}
+			&:first-child {
+				margin-top: 5px;
+			}
 		}
 	}
 	.dropdown.menu>li.is-dropdown-submenu-parent>a {
@@ -172,6 +176,7 @@ nav#primary-nav {
 			height: auto;
 			border: 1px solid transparent;
 			border-image: url(_static/images/dropdown-border.png) 1 repeat;
+			margin-top: 1px;
 		}
 	}
 	.is-dropdown-submenu {
@@ -262,7 +267,7 @@ Blog
 			text-transform: uppercase;
 			font-size: 0.9225rem;
 			letter-spacing: rem-calc(1.5);
-			margin-top: 17px;
+			margin-top: 7px;
 			margin-bottom: 20px;
 			line-height: 32px;
 			a {
@@ -287,9 +292,10 @@ Blog
 			}
 
 		}
-		.read-more {
+		.read-more, .reply {
 			float: right;
 			margin-bottom: 53px;
+			margin-top: 12px;
 			a {
 				font-style: italic;
 				font-size: rem-calc(13);
@@ -359,7 +365,7 @@ Blog
 			font-family: $body-font-second;
 			text-transform: uppercase;
 			font-style: normal;
-			letter-spacing: 2px;
+			letter-spacing: 0.07rem;
 			margin-left: 5px;
 
 		}
@@ -383,6 +389,14 @@ Blog
 		display: inline;
 	}
 }
+.comment-reply-title {
+	text-transform: uppercase;
+	font-size: 0.9225rem;
+	letter-spacing: rem-calc(1.5);
+	margin-top: 7px;
+	margin-bottom: 20px;
+	line-height: 32px;
+}
 .blog, .single {
 	.cushion {
 		padding-top: 115px;
@@ -400,6 +414,7 @@ Faux Landing Page
 		background-image: url(_static/images/satsuki.png);
 		background-repeat: no-repeat;
 		background-position: center;
+		background-size: 75% 75%;
 		text-align: center;
 		max-width: 1350px;
 		margin: 0 auto;
@@ -465,20 +480,13 @@ Sub Category Template
 			position: relative;
 			h1 {
 				@include center(both);
-				font-size: rem-calc(13.13);
-				color: $white;
 				text-transform: uppercase;
-				letter-spacing: 2px;
-				&:after {
-					content: '';
-					border-bottom: 1px solid $white;
-					width: 100%;
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					height: 5px;
-
-				}
+			    font-size: 0.9225rem;
+			    letter-spacing: 0.09375rem;
+			    line-height: 25px;
+			    color: $white;
+			    border-bottom: 1px solid $white;
+				
 			}
 		}
 
@@ -553,7 +561,6 @@ Sub Category Template
 	}
 	.screen-height {
 		margin-top: 10vh;
-		margin-bottom: 29vh;
 	}
 	.text-center.screen-height {
 		margin-top: 35vh;
@@ -561,6 +568,23 @@ Sub Category Template
 		font-size: rem-calc(9.38);
 		text-transform: uppercase;
 		letter-spacing: 1px;
+	}
+	.column.center {
+		width: 33.333%;
+		display: inline-block;
+		float: none;
+		&:nth-of-type(odd) {
+			margin-left: 16.5%;
+		}
+		&:nth-of-type(even) {
+			margin-right: 16.5%;
+		}
+	}
+
+}
+.page-recipes {
+	.screen-height {
+		margin-bottom: 29vh;
 	}
 }
 .category, .search, .tag {
@@ -593,6 +617,9 @@ Sub Category Template
 	.medium-8 {
 		padding: 0;
 	}
+}
+.category footer.site-footer {
+
 }
 /****************************
 404 & Search
@@ -690,7 +717,7 @@ About
 		blockquote {
 			border: none;
 			color: $black;
-			margin-bottom: 20px;
+			margin-bottom: 40px;
 			p {
 				color: $black;
 				font-size: rem-calc(20.63);
@@ -705,12 +732,12 @@ About
 			&:nth-of-type(2) {
 				float: right;
 				width: 65%;
-				margin-bottom: 40px;
+				margin-bottom: 0px;
 
 				p {
 					width: 100%;
 					text-align: center;
-					padding: 30px 67px;
+					padding: 20px;
 					line-height: 1.3;
 				}
 				hr {
@@ -732,6 +759,9 @@ About
 			a {
 				border-bottom: 1px solid $black;
 			}
+		}
+		p:nth-of-type(11) {
+			margin-bottom: 50px;
 		}
 	}
 }
@@ -760,6 +790,30 @@ Shop
 			}
 		}
 	}
+	p.title {
+		position: relative;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		&:after {
+			content: '';
+			border-bottom: 1px solid #000204;
+			position: absolute;
+			width: 50%;
+			bottom: 0px;
+			left: 25%;
+			right: 25%;
+		}
+	}
+}
+/****************************
+Contact 
+****************************/
+.page-contact {
+	.entry-content {
+		p:nth-of-type(1) {
+			letter-spacing: 0.05rem;
+		}
+	}
 }
 /****************************
 Footer
@@ -771,6 +825,9 @@ footer.site-footer {
 	background-image: url(_static/images/footer-bg.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: absolute;
+    width: 100%;
+    bottom: 0;
 	.social-contact {
 		position: relative;
 		padding-bottom: 13px;
@@ -782,7 +839,7 @@ footer.site-footer {
 			right: 0;
 			letter-spacing: 2px;
 			font-size: 0.7rem;
-			text-decoration: underline;
+			border-bottom: 1px solid $black;
 		}
 	}
 	.copyright, .creators {

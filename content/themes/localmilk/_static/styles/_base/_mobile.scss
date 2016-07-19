@@ -111,6 +111,7 @@ Media Queries & Mobile Styles
 	
 
 }
+
 @include breakpoint(small only) {
 	.mobile-switch {
 	   position: relative;
@@ -345,7 +346,13 @@ Media Queries & Mobile Styles
 	    padding-left: rem-calc(15);
 	    padding-right: rem-calc(15);
 	}
+	.page-template-sub-category-template .column.center {
+		display: block;
+		width: auto;
+		margin: 0 !important; 
+	}
 }
+
 @media (max-width: 1405px) {
 	.top-bar {
 	    .top-bar-title {

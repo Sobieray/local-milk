@@ -45,7 +45,7 @@
 		</div>
 		<div class="top-bar" id="main-menu">
 		  <div class="top-bar-title">
-		  	<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo" width="140"></a>
+		  	<a href="<?php echo get_home_url().'/front-page'; ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo" width="140"></a>
 		  	<span class="pencil-vert-border"></span>
 		  </div>
 		  <div class="search hide-for-xlarge">
