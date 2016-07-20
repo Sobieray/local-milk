@@ -24,7 +24,7 @@ nav#primary-nav {
 	width: 100%;
 	z-index: 99;
 	span.pencil-border {
-		background-image: url(_static/images/pencil-border.png);
+		background-image: url(_static/images/pencil-line-bottom.png);
 		padding: 1px 0px;
 		width: 100%;
 		display: block;
@@ -47,7 +47,7 @@ nav#primary-nav {
 		}
 		span.pencil-vert-border {
 			position: absolute;
-			background-image: url(_static/images/pencil-vert-border.png);
+			background-image: url(_static/images/pencil-line-vertical.png);
 			padding: 31px 0px;
 			top: -10px;
 			width: 2px;
@@ -84,7 +84,7 @@ nav#primary-nav {
 		position: relative;
 		span.pencil-vert-border {
 			position: absolute;
-			background-image: url(_static/images/pencil-vert-border.png);
+			background-image: url(_static/images/pencil-line-vertical.png);
 			padding: 31px 0px;
 			top: -10px;
 			width: 2px;
@@ -151,12 +151,12 @@ nav#primary-nav {
 		content: '';
 	    height: 10px;
 	    width: 30px;
-	    background-image: url(_static/images/dropdown-arrow.png);
+	    background-image: url(_static/images/chevron.png);
 	    background-repeat: no-repeat;
 	    background-size: contain;
 	    display: block;
 	    margin: 0 auto;
-	    bottom: -10px;
+	    bottom: -11px;
 	    z-index: -1;
 	    left: 50%;
 	    opacity: 0;
@@ -413,8 +413,8 @@ Faux Landing Page
 	.satsuki-bg {
 		background-image: url(_static/images/satsuki.png);
 		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 75% 75%;
+		background-position: 50% 35%;
+		background-size: contain;
 		text-align: center;
 		max-width: 1350px;
 		margin: 0 auto;
