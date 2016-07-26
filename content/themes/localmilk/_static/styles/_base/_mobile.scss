@@ -108,6 +108,13 @@ Media Queries & Mobile Styles
 			padding: 54px 15px;
 		}
 	}
+	footer.site-footer {
+		position: static;
+    	width: 100%;
+	}
+	body {
+		padding-bottom: 0;
+	}
 	
 
 }

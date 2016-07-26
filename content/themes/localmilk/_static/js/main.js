@@ -30,5 +30,6 @@
 			});
 		}
 		$('.comment-body').addClass('group');
+
 	}); // document.ready()		
 })(jQuery);

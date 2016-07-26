@@ -38,6 +38,7 @@ nav#primary-nav {
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding: 0;
+	text-align: center;
 	.top-bar-title {
 		position: relative;
 		padding: 10px 25px !important;
@@ -55,6 +56,9 @@ nav#primary-nav {
 		}
 	}
 	.top-bar-left {
+		float: none;
+		display: inline-block;
+		height: 45px;
 		li {
 			position: relative;
 			text-transform: uppercase; 
@@ -77,6 +81,7 @@ nav#primary-nav {
 				letter-spacing: rem-calc(4);
 				font-size: rem-calc(11.25);
 				padding: 20px 1.7vw;
+				font-family: $header-font-family;
 			}
 		}
 	}//.top-bar-left
@@ -97,6 +102,7 @@ nav#primary-nav {
 				padding: 23px 20px 21px;
 				margin: 0;
 				cursor: pointer;
+				width: 50px;
 
 			}
 			form {
@@ -118,6 +124,8 @@ nav#primary-nav {
 				float: left;
 				border-bottom: 1px solid #cacaca;
 				margin: 0;
+				width: 10px;
+				top: 40%;
 				&:focus {
 					outline: none;
 				}
@@ -254,13 +262,18 @@ Blog
 		}
 		.entry-meta {
 			line-height: 16px;
-			margin-top: 17px;
+			display: inline-block;
+			
 			a {
 				text-transform: uppercase;
 				font-size: rem-calc(8);
 				font-family: $body-font-second;
 				letter-spacing: 1px;
-				margin-top: 20px;
+				padding-right: 10px;
+				margin-right: 10px;
+				border-right: 1px solid $black;
+				display: block;
+				line-height: 8px;
 			}
 		}
 		.entry-title {
@@ -268,7 +281,7 @@ Blog
 			font-size: 0.9225rem;
 			letter-spacing: rem-calc(1.5);
 			margin-top: 7px;
-			margin-bottom: 20px;
+			margin-bottom: 0px;
 			line-height: 32px;
 			a {
 				border-bottom: 1px solid $black;
@@ -279,17 +292,16 @@ Blog
 			}
 		}
 		.entry-date {
-			font-size: rem-calc(10);
+			font-size: rem-calc(8);
 			letter-spacing: 2px;
 			padding-left: 0;
+			display: inline-block;
+			font-family: $body-font-second;
 		}
 		.entry-content {
 			font-size: rem-calc(17);
 			padding-right: 0;
-			p:nth-child(2) {
-				width: 66%;
-				display: inline-block;
-			}
+			
 
 		}
 		.read-more, .reply {
@@ -313,6 +325,16 @@ Blog
 				}
 			}
 
+		}
+		.read-more {
+			background-image: url(_static/images/read-more-bg.png);
+			background-size: contain;
+		    background-position: 10px -10px;
+		    background-repeat: no-repeat;
+		    padding-top: 12px;
+    		padding-bottom: 32px;
+    		padding-left: 72px;
+    		margin-bottom: 21px;
 		}
 		.more-link {
 			display: none;
@@ -498,9 +520,9 @@ Sub Category Template
 		margin-top: 110px;
 		input[type=image] {
 			position: absolute;
-			top: 40%;
+			top: 32%;
 			right: 3%;
-			width: 10px;
+			width: 11px;
 		}
 		input[type=text] {
 			height: 30px;
@@ -523,6 +545,7 @@ Sub Category Template
 			letter-spacing: 2px;
 			width: 100%;
 			text-align: center;
+			font-family: $header-font-family;
 		}
 	}
 	.medium-4 {
@@ -532,6 +555,7 @@ Sub Category Template
 			text-transform: uppercase;
 			letter-spacing: 2px;
 			font-size: rem-calc(9.38);
+			font-family: $header-font-family;
 		}
 	}
 	.cat-list {
@@ -617,9 +641,6 @@ Sub Category Template
 	.medium-8 {
 		padding: 0;
 	}
-}
-.category footer.site-footer {
-
 }
 /****************************
 404 & Search
@@ -828,6 +849,7 @@ footer.site-footer {
 	position: absolute;
     width: 100%;
     bottom: 0;
+    font-family: $header-font-family;
 	.social-contact {
 		position: relative;
 		padding-bottom: 13px;
@@ -840,6 +862,7 @@ footer.site-footer {
 			letter-spacing: 2px;
 			font-size: 0.7rem;
 			border-bottom: 1px solid $black;
+			font-family: $header-font-family;
 		}
 	}
 	.copyright, .creators {

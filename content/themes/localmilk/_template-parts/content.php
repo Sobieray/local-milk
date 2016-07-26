@@ -8,51 +8,46 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('group'); ?>>
 	<header class="entry-header">
 		<?php
+			$date = get_the_date('m.d.Y');
 			if ( is_single() ) {
-				if ( has_post_thumbnail() ) {
-				    the_post_thumbnail();
-				}
-				echo '<div class="entry-meta">';
-				$categories = get_the_category();
-    			if ( ! empty( $categories ) ) {
-    			    echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
-    			}
-    			echo '</div>';
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				if ( has_post_thumbnail() ) {
-				    the_post_thumbnail();
-				} 
-				echo '<div class="entry-meta">';
-				$categories = get_the_category();
-    			if ( ! empty( $categories ) ) {
-    			    echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
-    			}
-    			echo '</div>';
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				
-
-			}
-
-		if ( 'post' === get_post_type() ) : ?>
-    		<div class="entry-meta">
-    		<!-- <?php
-    			$categories = get_the_category();
+				the_title( '<h1 class="entry-title">', '</h1>' );
+				echo 
+				'<div class="post-info">';
+				
+					echo '<div class="entry-meta">';
+					$categories = get_the_category();
+	    			if ( ! empty( $categories ) ) {
+	    			    echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+	    			}
+	    			echo
+	    			'</div><div class="entry-date">
+						<p>'. $date .'</p>
+					</div>';
+    			echo '</div>';
+				
+			} else {
+				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				echo 
+				'<div class="post-info">';
+				echo 
+				'<div class="entry-meta">';
+				$categories = get_the_category();
     			if ( ! empty( $categories ) ) {
-    			    echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+    			    echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a></div>';
     			}
-    		?> -->
-    		</div><!-- /.entry-meta -->
-		<?php
-		endif; ?>
+
+    			echo 
+    			'<div class="entry-date">
+					<p>'. $date .'</p>
+				</div></div>';
+			}
+		?>
 	</header><!-- /.entry-header -->
 
 	<div class="group">
 		
 		<div class="entry-content">
-			<div class="medium-4 column entry-date">
-				<p><?php the_date('m.d.Y'); ?></p>
-			</div>
 			<?php the_content(); ?>
 		</div>
 	</div><!-- /.row -->
