@@ -26,6 +26,9 @@ a {
 .cushion {
 	padding-top: 54px;
 }
+section.cushion.group {
+	padding-top: 108px;
+}
 
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
 	float: left;
@@ -464,5 +467,14 @@ Recipes Ziplist
 		.butn-link {
 			opacity: 0;
 		}
+	}
+}
+//menu-item-3438 - Remove pointer 
+#menu-item-3438 {
+	&:hover {
+		cursor: default;
+	}
+	> a:hover {
+		cursor: default;
 	}
 }

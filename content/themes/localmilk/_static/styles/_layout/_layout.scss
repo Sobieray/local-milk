@@ -342,7 +342,6 @@ Blog
 	}
 	.post-navigation {
 		margin-top: 78px;
-		border-top: 1px solid $black;
 		a {
 			text-transform: uppercase;
 			letter-spacing: 2px;
@@ -427,7 +426,7 @@ Blog
 /****************************
 Faux Landing Page
 ****************************/
-.page-template-faux-landing-page {
+.page-template-faux-landing-page, .blog {
 	.full-width {
 		height: 100vh;
 		width: 100vw;
@@ -793,9 +792,19 @@ Shop
 	.row.cushion {
 		max-width: 820px;
 	}
+	#top {
+		background-size: contain;
+		background-position: center;
+		h1.entry-title {
+			color: $black;
+			border-color: $black;
+		}
+	}
 	figure {
 		border: 1px solid $light-gray;
 		padding: 0;
+		background-color: $white;
+		min-height: 330px;
 		figcaption {
 			padding-top: 20px;
 			position: static;
@@ -861,7 +870,6 @@ footer.site-footer {
 			right: 0;
 			letter-spacing: 2px;
 			font-size: 0.7rem;
-			border-bottom: 1px solid $black;
 			font-family: $header-font-family;
 		}
 	}

@@ -4,7 +4,7 @@
 			<?php if ( is_active_sidebar( 'social-media' ) ) : ?>
 				<?php dynamic_sidebar( 'social-media' ); ?>
 			<?php endif; ?>
-			<a class="contact" href="contact">contact/work together</a>
+			<a class="contact" href="contact">contact</a>
 		</div>
 		<div class="credits">
 	    	<p class="copyright">&copy; <?php echo date('Y'); ?> Local Milk. All Rights Reserved.</p>
