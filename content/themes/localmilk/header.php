@@ -46,8 +46,7 @@
 		</div>
 		<div class="top-bar" id="main-menu">
 		  <div class="top-bar-title">
-		  	<a href="<?php echo get_home_url().'/front-page'; ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo" width="140"></a>
-		  	<span class="pencil-vert-border"></span>
+		  	<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/icons/homeIcon.png' ?>" alt="local milk logo" width="140"></a>
 		  </div>
 		  <div class="search hide-for-xlarge">
 		  	<form action="/" method="get" class="closed">
@@ -71,14 +70,12 @@
 			  <?php if ( is_active_sidebar( 'social-media' ) ) : ?>
 					<?php dynamic_sidebar( 'social-media' ); ?>
 				<?php endif; ?>
-				<span class="pencil-vert-border"></span>
 				<div class="search">
 					<form action="/" method="get" class="closed">
 					    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="search" />
 					    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" />
 					</form>
 					<img src="<?php bloginfo( 'template_url' ); ?>/_static/images/icons/search.png" alt="search icon">
-					<span class="pencil-vert-border"></span>
 				</div>
 		  </div><!-- //.top-bar-right -->
 		  <div class="hide-for-xlarge">
@@ -87,6 +84,5 @@
 				<?php endif; ?>
 			</div>
 		</div><!-- //.top-bar -->
-		<span class="pencil-border"></span>
 	</nav>
 

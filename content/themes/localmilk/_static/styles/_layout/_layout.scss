@@ -15,20 +15,20 @@ body {
 Navigation
 ****************************/
 nav#primary-nav {
-	background-image: url(_static/images/navbar-bg.png);
-	background-color: #f9f9f9;
+	//background-image: url(_static/images/navbar-bg.png);
+	//background-color: #f9f9f9;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	position: fixed;
 	width: 100%;
 	z-index: 99;
-	span.pencil-border {
-		background-image: url(_static/images/pencil-line-bottom.png);
-		padding: 1px 0px;
-		width: 100%;
-		display: block;
-	}
+	// span.pencil-border {
+	// 	background-image: url(_static/images/pencil-line-bottom.png);
+	// 	padding: 1px 0px;
+	// 	width: 100%;
+	// 	display: block;
+	// }
 	.dropdown.menu>li.is-dropdown-submenu-parent>a:after {
 		display: none;
 	}
@@ -44,16 +44,16 @@ nav#primary-nav {
 		padding: 10px 25px !important;
 		margin: 0;
 		img {
-			width: 75px;
+			width: 14px;
 		}
-		span.pencil-vert-border {
+		/* span.pencil-vert-border {
 			position: absolute;
 			background-image: url(_static/images/pencil-line-vertical.png);
 			padding: 31px 0px;
 			top: -10px;
 			width: 2px;
 			right: 0;
-		}
+		} */
 	}
 	.top-bar-left {
 		float: none;
@@ -65,13 +65,13 @@ nav#primary-nav {
 			width: auto;
 
 			text-align: center;
-			&:after {
+			/* &:after {
 				content: "|";
 				position: absolute;
 				right: 0;
 				top: 30%;
 				font-size: 12px;
-			}
+			} */
 			&:last-child {
 				&:after {
 					display: none;
@@ -183,7 +183,7 @@ nav#primary-nav {
 		&.js-dropdown-active {
 			height: auto;
 			border: 1px solid transparent;
-			border-image: url(_static/images/dropdown-border.png) 1 repeat;
+			//border-image: url(_static/images/dropdown-border.png) 1 repeat;
 			margin-top: 1px;
 		}
 	}
@@ -420,29 +420,29 @@ Blog
 }
 .blog, .single {
 	.cushion {
-		padding-top: 115px;
+		padding-top: 15px;
 	}
 }
 /****************************
 Faux Landing Page
 ****************************/
-.page-template-faux-landing-page, .blog {
+.blog, .single {
 	.full-width {
-		height: 100vh;
+		height: 400px;
 		width: 100vw;
 	}
 	.satsuki-bg {
 		background-image: url(_static/images/satsuki.png);
 		background-repeat: no-repeat;
-		background-position: 50% 35%;
-		background-size: contain;
+		background-position: center;
+		background-size: cover;
 		text-align: center;
-		max-width: 1350px;
+		max-width: 1280px;
 		margin: 0 auto;
 		height: 100%;
 		img {
-			margin-top: 33vh;
-			margin-bottom: 55px;
+			margin-top: 140px;
+			margin-bottom: 30px;
 			max-width: 140px;
 		}
 		h1 {

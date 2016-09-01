@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-<?php //include 'faux-landing-page.php'; ?>
+<?php include 'faux-landing-page.php'; ?>
 <div class="row cushion mobile-switch">
 	<?php get_sidebar(); ?>
 	<div class="column medium-8 order-1">
