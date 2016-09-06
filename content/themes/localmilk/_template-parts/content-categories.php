@@ -16,7 +16,6 @@
 			</form>
 		</div>
 
-
 	</header><!-- .entry-header -->
 	<div class="row">
 		<div class="group screen-height">

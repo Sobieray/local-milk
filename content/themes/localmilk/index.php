@@ -13,21 +13,35 @@ get_header();
 <div class="row cushion mobile-switch">
 	<?php get_sidebar(); ?>
 	<div class="column medium-8 order-1">
-	    <?php
-		if ( have_posts() ) :
+        <?php if (isset($_GET['cat'])) : ?>
+           <?php
+                $tocCat = $_GET['cat'];
+                echo "<h3>". $tocCat . "</h3>";
+                $the_query = new WP_Query(array( 'category_name' => $tocCat ));
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+                // The Loop
+                if ( $the_query->have_posts() ) {
+                    while ( $the_query->have_posts() ) {
+                        $the_query->the_post();
+                        get_template_part( '_template-parts/content', 'toc');
+                    }
+                    /* Restore original Post Data */
+                    wp_reset_postdata();
 
-	            get_template_part( '_template-parts/content', get_post_format() );
-
-	        endwhile;
-
-		endif; ?>
-        <div class="post-navigation"><p><?php posts_nav_link(' ','Newer Posts','Older Posts'); ?></p></div>
-	</div>
-    
-
+                } else {
+                    // no posts found
+                }
+            ?>
+        <?php else : ?>
+        	<?php if ( have_posts() ) :
+        		/* Start the Loop */
+        		while ( have_posts() ) : the_post();
+                    get_template_part( '_template-parts/content', get_post_format() );
+                endwhile;
+        	endif; ?>
+            <div class="post-navigation"><p><?php posts_nav_link(' ','Newer Posts','Older Posts'); ?></p></div>
+        <?php endif; ?>
+	</div>    
 </div> <!-- /.row -->
 <div id="popular-posts" class="row show-for-medium">
         <p class="title">Popular Posts</p>
@@ -43,5 +57,4 @@ get_header();
         endwhile;
     ?>
 </div>
-
 <?php get_footer(); ?>

@@ -47,10 +47,8 @@
 			 			}
 			 			endwhile;
 			 		echo '</div>';
-
 			 	}
-	}
-		
+	}	
 	?>
 	
 </div>

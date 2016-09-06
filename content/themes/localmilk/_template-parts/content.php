@@ -4,7 +4,6 @@
  *
  */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('group'); ?>>
 	<header class="entry-header">
 		<?php
@@ -64,3 +63,4 @@
 
 	</footer><!-- /.entry-footer -->
 </article><!-- /#post-## -->
+

@@ -393,7 +393,7 @@ class TOC extends WP_Widget {
 
 				<?php foreach( $terms as $term ): ?>
 
-					<a href="<?php echo get_term_link( $term ); ?>"><li><span class="roman"></span><span><?php echo $term->name; ?></span></li></a>
+					<a href="/?cat=<?php echo $term->name; ?>"><li><span class="roman"></span><span><?php echo $term->name; ?></span></li></a>
 
 
 				<?php endforeach; ?>
