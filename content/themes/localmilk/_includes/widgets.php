@@ -391,12 +391,12 @@ class TOC extends WP_Widget {
 				<p class="title">Table of contents</p>
 				<ol class=toc>
 
-				<?php foreach( $terms as $term ): ?>
+				<?php foreach( $terms as $term ) {
+					$termName = $term->name;
+					echo '<a href="'. get_home_url() .'/?cat='. $termName .'"><li><span class="roman"></span><span>'. $termName .'</span></li></a>';
 
-					<a href="/?cat=<?php echo $term->name; ?>"><li><span class="roman"></span><span><?php echo $term->name; ?></span></li></a>
-
-
-				<?php endforeach; ?>
+				}
+				?>
 
 				</ol>
 			</nav>
