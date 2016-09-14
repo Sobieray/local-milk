@@ -70,7 +70,7 @@
 			 		$this_category = get_category_by_slug($child->name);
 			 		$grandchildren = get_categories(array( 
 			 			'parent' => $this_category->cat_ID,
-			 			'orderby' => 'id'
+			 			'orderby' => 'name'
 			 		));
 
 			 		$result = count($grandchildren);

@@ -12,8 +12,8 @@
 			<a href="<?php echo $link; ?>" target="_blank"><figure>
 				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 				<figcaption>
+					<p class="price"><?php echo $price; ?></p>
 					<p class="title"><?php echo $description; ?></p>
-					<p><?php echo $price; ?></p>
 				</figcaption>
 			</figure></a>
 		</div>

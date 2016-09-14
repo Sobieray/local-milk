@@ -81,7 +81,7 @@ nav#primary-nav {
 				letter-spacing: rem-calc(4);
 				font-size: rem-calc(11.25);
 				padding: 20px 1.7vw;
-				font-family: $header-font-family;
+				font-family: $body-font-second;
 			}
 		}
 	}//.top-bar-left
@@ -284,7 +284,7 @@ Blog
 			margin-bottom: 0px;
 			line-height: 32px;
 			a {
-				border-bottom: 1px solid $black;
+				//border-bottom: 1px solid $black;
 				padding-bottom: 5px;
 				&:hover {
 					border-bottom: 1px solid #c8c8c8;
@@ -405,7 +405,7 @@ Blog
 
 	}
 	.entry-title {
-		border-bottom: 1px solid $black;
+		//border-bottom: 1px solid $black;
 		padding-bottom: 3px;
 		display: inline;
 	}
@@ -554,7 +554,7 @@ Sub Category Template
 			padding-top: 10px;
 			text-transform: uppercase;
 			letter-spacing: 2px;
-			font-size: rem-calc(9.38);
+			font-size: 0.7rem;
 			font-family: $header-font-family;
 		}
 	}
@@ -832,7 +832,6 @@ Shop
 		}
 	}
 	figure {
-		border: 1px solid $light-gray;
 		padding: 0;
 		background-color: $white;
 		min-height: 330px;
@@ -851,16 +850,19 @@ Shop
 			}
 		}
 	}
+	p.price {
+		font-size: 0.7rem;
+	}
 	p.title {
 		position: relative;
-		padding-bottom: 15px;
-		margin-bottom: 15px;
-		&:after {
+		margin-top: 15px;
+		padding: 15px;
+		&:before {
 			content: '';
 			border-bottom: 1px solid #000204;
 			position: absolute;
 			width: 50%;
-			bottom: 0px;
+			top: 0px;
 			left: 25%;
 			right: 25%;
 		}

@@ -383,25 +383,24 @@ class TOC extends WP_Widget {
 	public function widget( $args, $instance ) {
 		
 		
-		$terms = get_field('list_of_categories', 'option');
+		//$terms = get_field('list_of_categories', 'option');
 
 
-		if( $terms ): ?>
-			<nav id="table-contents">
-				<p class="title">Table of contents</p>
-				<ol class=toc>
+		if( have_rows('list_of_categories', 'option') ):
+			echo  '<nav id="table-contents">
+				     <p class="title">Table of contents</p>
+					 <ol class=toc>';
+			 while ( have_rows('list_of_categories', 'option') ) : the_row();
+				$term = get_sub_field('category');
+				echo '<a href="'. get_home_url() .'/?cat='. $term .'"><li><span class="roman"></span><span>'. $term .'</span></li></a>';
+						
+		 	endwhile;
+		 	echo '</ol>
+					</nav>';
+		else :
+		   echo '<p>no rows found</p>';
+		endif;
 
-				<?php foreach( $terms as $term ) {
-					$termName = $term->name;
-					echo '<a href="'. get_home_url() .'/?cat='. $termName .'"><li><span class="roman"></span><span>'. $termName .'</span></li></a>';
-
-				}
-				?>
-
-				</ol>
-			</nav>
-
-		<?php endif;
 	}
 	/**
 	 * Back-end widget form.
