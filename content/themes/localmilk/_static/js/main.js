@@ -30,6 +30,13 @@
 			});
 		}
 		$('.comment-body').addClass('group');
+		$('.menu-icon').click(function() {
+			if ($('.mobile-menu-logo').hasClass('show')) {
+				$('.mobile-menu-logo').removeClass('show');
+			}else {
+				$('.mobile-menu-logo').addClass('show');
+			}
+		});
 
 	}); // document.ready()		
 })(jQuery);

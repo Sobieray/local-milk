@@ -39,7 +39,7 @@
 <?php endif; ?>
 	<nav id="primary-nav">
 		<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="xlarge">
-			<a href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo"></a>
+			<a class="mobile-menu-logo" href="<?php echo get_home_url(); ?>"><img src="<?php echo $images_dir . '/logo.png' ?>" alt="local milk logo"></a>
 		  <button class="menu-icon" type="button" data-toggle></button>
 		</div>
 		<div class="top-bar" id="main-menu">

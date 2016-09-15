@@ -37,7 +37,7 @@ Media Queries & Mobile Styles
 			}
 		}
 		.top-bar {
-			background: none;
+			background: $white;
 			height: 100vh;
 			overflow: scroll;
 			.top-bar-left, .top-bar-right {
@@ -154,6 +154,7 @@ Media Queries & Mobile Styles
 		}
 	}
 	.single, .blog {
+		
 		header.entry-header {
 			text-align: center;
 		}
@@ -379,6 +380,14 @@ Media Queries & Mobile Styles
 	.show-for-xlarge-only {
 		display: none;
 	}
+	.single, .blog {
+		.mobile-menu-logo {
+			display: none;
+			&.show {
+				display: block;
+			}
+		}
+	}
 }
 @include breakpoint(xlarge up) {
 	.hide-for-xlarge {
@@ -397,7 +406,8 @@ Media Queries & Mobile Styles
 		.title-bar {
 			background-image: url(_static/images/navbar-wc.png);
 			background-repeat: no-repeat;
-			background-color: transparent;
+			background-color: $white;
+			min-height: 56px;
 			border: none;
 			img {
 				width: 100px;
@@ -428,7 +438,7 @@ Media Queries & Mobile Styles
 			}
 		}
 		.top-bar {
-			background: none;
+			background: $white;
 			height: 100vh;
 			overflow: scroll;
 			.top-bar-left, .top-bar-right {
@@ -481,6 +491,8 @@ Media Queries & Mobile Styles
 			#socialMedia {
 				height: 55px;
 				width: 100%;
+				position: relative;
+				top: 1rem;
 				li {
 					width: 20%;
 					a img {
