@@ -25,9 +25,7 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|EB+Garamond|Montserrat:400,700" rel="stylesheet">
-	
-
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|EB+Garamond|Montserrat:400,700|Raleway:400,400i,500" rel="stylesheet">
 	<?php wp_enqueue_script("jquery"); ?>
 	<?php wp_head(); ?>
 </head>

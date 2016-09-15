@@ -39,6 +39,7 @@ nav#primary-nav {
 	background-position: left top;
 	padding: 0;
 	text-align: center;
+	background-color: rgba(250,250,250,0.9);
 	.top-bar-title {
 		position: relative;
 		padding: 10px 25px !important;
@@ -81,7 +82,7 @@ nav#primary-nav {
 				letter-spacing: rem-calc(4);
 				font-size: rem-calc(11.25);
 				padding: 20px 1.7vw;
-				font-family: $body-font-second;
+				font-family: $nav-font;
 			}
 		}
 	}//.top-bar-left
@@ -159,12 +160,12 @@ nav#primary-nav {
 		content: '';
 	    height: 10px;
 	    width: 30px;
-	    background-image: url(_static/images/chevron.png);
+	    //background-image: url(_static/images/chevron.png);
 	    background-repeat: no-repeat;
 	    background-size: contain;
 	    display: block;
 	    margin: 0 auto;
-	    bottom: -11px;
+	    bottom: -10px;
 	    z-index: -1;
 	    left: 50%;
 	    opacity: 0;
@@ -176,20 +177,21 @@ nav#primary-nav {
 	.dropdown.menu>li.opens-right>.is-dropdown-submenu {
 		@include center(horizontal)
 		//left: -20%;
-		//top: 102%;
+		top: 103%;
 		transition: height ease 0.2s;
 		height: 0;
 		overflow: hidden;
 		&.js-dropdown-active {
 			height: auto;
-			border: 1px solid transparent;
+			//border: 1px solid transparent;
 			//border-image: url(_static/images/dropdown-border.png) 1 repeat;
 			margin-top: 1px;
 		}
 	}
 	.is-dropdown-submenu {
 
-		 background-color: $white;
+		 background-color: rgba(250,250,250,0.9);
+		 box-shadow: 0px 0px 1px rgba(0,0,0,0.1);
 		 transition: all ease 0.2s;
 		 display: block;
 		 border: none;
