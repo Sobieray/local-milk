@@ -359,6 +359,17 @@ Media Queries & Mobile Styles
 		width: auto;
 		margin: 0 !important; 
 	}
+	.grid-sizer {
+		width: 47%;
+	}
+	.filter-button-group {
+		.button {
+			display: block;
+			width: 25%;
+			margin: 0 auto !important;
+
+		}
+	}
 }
 
 @media (max-width: 1405px) {

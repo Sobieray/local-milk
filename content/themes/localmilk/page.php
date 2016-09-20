@@ -8,10 +8,16 @@ get_header();
 <div class="cushion">
 	<?php $bgImage = get_field('hero_image'); ?>
 	<header id="top" class="entry-header" style="background-image: url(<?php echo $bgImage['url']; ?>)">
+	<?php if (is_page('shop')) :  $logo = get_field('logo', 'option'); ?>
+		<div class="shop-title">
+			<img src="<?php echo $logo['url']; ?>" >
+			<h1>Shop</h1>
+		</div>
+	<?php else : ?>
 		<div class="title-search">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</div>
-
+	<?php endif; ?>
 
 	</header><!-- .entry-header -->
 </div>

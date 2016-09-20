@@ -17,6 +17,7 @@
     "gulp-uglify": "^1.5.3"
   },
   "dependencies": {
-    "foundation-sites": "^6.2.3"
+    "foundation-sites": "^6.2.3",
+    "isotope-layout": "^3.0.1"
   }
 }

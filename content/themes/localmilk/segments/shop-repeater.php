@@ -1,21 +1,41 @@
-<!-- code for showing FAQ's -->
-
-<?php if( have_rows('shop') ): ?>
-	<?php while( have_rows('shop') ): the_row(); 
-		// vars
-		$image = get_sub_field('image');
-		$description = get_sub_field('description');
-		$price = get_sub_field('price');
-		$link = get_sub_field('link');
-		?>
-		<div class="column small-12 medium-6 large-4">
-			<a href="<?php echo $link; ?>" target="_blank"><figure>
-				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-				<figcaption>
-					<p class="price"><?php echo $price; ?></p>
-					<p class="title"><?php echo $description; ?></p>
-				</figcaption>
-			</figure></a>
-		</div>
-	<?php endwhile; ?>
-<?php endif; ?>
+<!-- code for Shop page and showing Data Filters for Isotope Filtering -->
+<?php 
+$slug = 'shop';
+$this_category = get_category_by_slug('shop');
+$categories = get_categories( array(
+	'parent' => $this_category->cat_ID
+) );
+echo '<div class="button-group filter-button-group">';
+echo '<button class="button" data-filter="*">show all</button>';
+foreach ( $categories as $category ) {
+	$name = $category->name;
+	$slug = $category->slug;
+    echo '<button class="button" data-filter=".'. $slug .'">'. $name .'</button>';
+}
+?>
+</div>
+<div class="grid">
+	<?php 
+		$args = array( 'post_type' => 'shop', 'posts_per_page' => 10 );
+		$loop = new WP_Query( $args );
+		while ( $loop->have_posts() ) : $loop->the_post();
+		  $title =  get_the_title();
+		  $image = get_the_post_thumbnail();
+		  $separator = ' ';
+		  $thelist = '';
+		  $terms = (array) get_the_category();
+		  foreach($terms as $term) {    // concate
+		      $thelist .= $separator . $term->slug;
+		  } 
+		  echo '<div class="grid-item grid-sizer'.$thelist.'">
+		  <a href="'. get_field('link') .'" target="_blank"><figure>
+		  	'. $image .'
+		  	<figcaption>
+		  		<p class="price">$ '. get_field('price') .'</p>
+		  		<p class="title">'. $title .'</p>
+		  	</figcaption>
+		  </figure></a>
+		  </div>';
+	endwhile;
+	?>
+</div>

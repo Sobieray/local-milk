@@ -39,6 +39,7 @@ var paths = {
     './node_modules/foundation-sites/dist/plugins/foundation.responsiveToggle.js',
     './node_modules/foundation-sites/dist/plugins/foundation.util.mediaQuery.js',
     './node_modules/foundation-sites/vendor/modernizr/modernizr.js',
+    './node_modules/isotope-layout/dist/isotope.pkgd.js',
     './_static/js/main.js'
     //'./node_modules/foundation-sites/dist/plugins/foundation.util.triggers.js',
     //'./node_modules/foundation-sites/dist/plugins/foundation.util.motion.js'
