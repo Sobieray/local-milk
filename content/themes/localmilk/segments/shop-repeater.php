@@ -6,7 +6,7 @@ $categories = get_categories( array(
 	'parent' => $this_category->cat_ID
 ) );
 echo '<div class="button-group filter-button-group">';
-echo '<button class="button" data-filter="*">show all</button>';
+echo '<button class="button" data-filter="*">all</button>';
 foreach ( $categories as $category ) {
 	$name = $category->name;
 	$slug = $category->slug;

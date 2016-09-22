@@ -481,17 +481,20 @@ Recipes Ziplist
 	margin: 0 1.5%;
 }
 .filter-button-group {
+	display: table;
+	margin: 0 auto;
 	margin-bottom: 2rem;
 	.button {
 		text-align: center;
 		background-color:transparent;
 		color: $black;
 		text-transform: uppercase;
-		font-size: 1rem;
+		font-size: 0.70312rem;
 		font-family: $nav-font;
-		line-height: 1.2rem;
-		padding: 10px 0px;
+		line-height: 1rem;
+		padding: 6px 0px;
 		margin: 0 10px;
+		letter-spacing: 0.25rem;
 		&:hover, &:focus, &.active {
 			border-bottom: 1px solid $black;
 			outline: none;
