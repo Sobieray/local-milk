@@ -8,7 +8,7 @@ Repsonsive blog built using wordpress, gulp, sass, and npm. The dev enviroment i
 The Wordpress core is installed in a sub-directory called wordpress and the wp-config.php file is using a local-config.php, staging-config.php, and production-config.php  that supplies the appopriate variables for each approiate enviroment. The site content is also in a sub-directory within the root folder called content. Updating the wp-config.php and the index.php in the root folder is required to connect the install. for reference please check the wordpress [codex](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory)
 
 ## Theme
-A custom theme was built for this sites using a stipped and modfifed version of _underscores. The theme is also built on Zurbs foundation 6 foundation-sites responsive framework. The theme is customized to display and organize blog post categories based on parent, child, and grandchildern categories. 
+A custom theme was built for this sites using a stipped and modfifed version of _underscores. The theme is also built on Zurbs Foundation 6 [foundation-sites](http://foundation.zurb.com/sites/docs/) responsive framework. The theme is customized to display and organize blog post categories based on parent, child, and grandchildern categories. 
 
 ## Install Front-End 
 `cd` into `/content/themes/localmilk` folder and run `npm install` to download all the dev dependencies followed by `gulp` to compile code from the necessary dependencies. Activate the Local Milk theme from the wordpress admin and you should be up and running with the front-end of the site.
